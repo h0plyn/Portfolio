@@ -1,0 +1,51 @@
+@import 'reset.css';
+
+body {
+    background-color:  #103518;
+    color: white;
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 78%;
+    letter-spacing: 3.5px;
+}
+
+a:visited {
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+.box {
+    flex-direction: row;
+    background-color: #f1f1f1;
+    width: 50px;
+    align-self: center;
+    height: 50px;
+    
+}
+
+.fab {
+    margin: 15px 10px 0px 10px;
+
+}
