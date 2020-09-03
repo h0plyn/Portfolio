@@ -13,8 +13,14 @@ h1 {
     letter-spacing: 3.5px;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 a:visited {
     color: white;
+    text-decoration: none;
 }
 
 .container {
