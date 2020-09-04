@@ -28,8 +28,6 @@ a:visited {
     justify-content: center;
     align-items: center;
     height: 100vh;
-
-
 }
 
 .flex {
@@ -38,7 +36,6 @@ a:visited {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 
 
@@ -54,4 +51,18 @@ a:visited {
 .fab {
     margin: 15px 10px 0px 10px;
 
+}
+
+/* Media Queries */
+
+@media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 812px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+
+    h1 {
+        font-size: 2em;
+        line-height: 78%;
+        letter-spacing: 2.5px;
+    }
 }
