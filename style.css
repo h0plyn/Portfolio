@@ -64,12 +64,13 @@ a:visited {
         margin: 0;
         height: 100%;
         overflow: hidden;
+        position: fixed;
     }
 
     h1 {
         font-size: 2em;
         line-height: 78%;
         letter-spacing: 2.5px;
-        bottom: 1em;
+        bottom: .5em;
     }
 }
