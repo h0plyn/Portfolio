@@ -74,4 +74,8 @@ a:visited {
         line-height: 78%;
         letter-spacing: 2.5px;
     }
+
+    .info {
+        width: 75%;
+    }
 }
