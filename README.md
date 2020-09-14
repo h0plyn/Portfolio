@@ -6,7 +6,12 @@
 
 This portfolio website will hold completed projects, links to social media and other information. It will be updated as new skills are learned and projects are completed.
 
+## To Do:
+
+1. Refactor CSS to mobile first
+
 ### Tech
 
 - HTML/CSS
+- JavaScript
 - Netlify
