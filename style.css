@@ -1,16 +1,22 @@
 @import 'reset.css';
 
+/* base styles */
 body {
     background-color:  #103518;
     color: white;
-    font-size: 16px;
+    position: fixed; 
     font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    border: 1px solid red;
+    height: 100vh;
 }
 
+/* fonts */
 h1 {
-    font-size: 3em;
+    font-size: 2em;
     line-height: 78%;
-    letter-spacing: 3.5px;
+    letter-spacing: 2.5px;
 }
 
 a {
@@ -22,8 +28,68 @@ a:visited {
     color: white;
     text-decoration: none;
 }
+/* mobile styles */
+.flex {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
 
 .container {
+    padding-top: 4rem;
+    display: flex;
+    height: 100%;
+}
+
+.icon {
+    margin: 1rem .625rem 3rem .625rem;
+}
+
+.info {
+    width: 75vw;
+    visibility: hidden;
+}
+
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+
+}
+
+/* large tablets & laptops */
+@media screen and (min-width: 960px) {
+    
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px) {
+
+}
+
+/* Media Queries */
+/* iPhone X */
+
+/* @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 812px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+
+
+    .container {
+        padding: 12rem 0rem 0rem 0rem;
+
+        height: 100%;
+    }
+
+
+    .info {
+        width: 75vw;
+    }
+} */
+
+/* .container {
     padding: 7.5rem 0rem 0rem 0rem;
     display: flex;
     justify-content: center;
@@ -46,38 +112,10 @@ a:visited {
 .info {
     visibility: hidden;
     width: 35vw;
-}
+} */
 
-
-/* Media Queries */
-
-/* iPhone X */
-@media only screen
-    and (min-device-width: 375px)
-    and (max-device-width: 812px)
-    and (-webkit-min-device-pixel-ratio: 3) {
-
-    body {
-        position: fixed;
-        margin: 0;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .container {
-        padding: 12rem 0rem 0rem 0rem;
-
-        height: 100%;
-    }
-
-    h1 {
-        height: 100%;
-        font-size: 2em;
-        line-height: 78%;
-        letter-spacing: 2.5px;
-    }
-
-    .info {
-        width: 75vw;
-    }
-}
+/* h1 {
+    font-size: 3em;
+    line-height: 78%;
+    letter-spacing: 3.5px;
+} */
