@@ -1,0 +1,30 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio of Ricky Rhodes",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx parcel public/index.html",
+    "build": "npx parcel build public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h0plyn/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h0plyn/Portfolio/issues"
+  },
+  "homepage": "https://github.com/h0plyn/Portfolio#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "reset.css": "^2.0.2",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
