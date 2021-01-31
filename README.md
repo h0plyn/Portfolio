@@ -8,10 +8,12 @@ This portfolio website will hold completed projects, links to social media and o
 
 ## To Do:
 
-1. Refactor CSS to mobile first
+1. Style Components with Styled-Components
+2. Add projects feature
+3. Add past work history feature
 
 ### Tech
 
-- HTML/CSS
-- JavaScript
+- React
+- Parcel
 - Netlify
