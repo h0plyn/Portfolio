@@ -1,16 +1,13 @@
-/* @import 'reset.css';
+@import 'reset.css';
 
 body {
   background-color: #ecdccb;
   color: #1d403b;
-  position: fixed;
   font-family: Helvetica, sans-serif;
   font-size: 16px;
-  overflow: hidden;
-  height: 100vh;
 }
 
-h1 {
+/* h1 {
   font-size: 4em;
   line-height: 100%;
   letter-spacing: 0.1rem;
@@ -60,9 +57,9 @@ a:visited {
   justify-content: center;
   align-content: center;
   width: 80vw;
-}
+} */
 
-@media screen and (min-width: 620px) {
+/* @media screen and (min-width: 620px) {
   body {
     width: 100%;
   }
