@@ -7,7 +7,6 @@ const Container = styled.div`
   flex-direction: column;
   padding: 1rem 2rem;
   justify-content: center;
-  background-color: #ecdccb;
 `
 
 const MainText = styled.h1`
@@ -16,7 +15,7 @@ const MainText = styled.h1`
   color: #3b5d55;
 `
 
-export default function Info(props) {
+export default function Header(props) {
   return (
     <Container>
       <MainText>
