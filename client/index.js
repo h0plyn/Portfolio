@@ -10,8 +10,8 @@ function App() {
     <>
       <GlobalStyles />
       <Header />
-      <LinkBar />
       <Projects />
+      <LinkBar />
     </>
   )
 }
