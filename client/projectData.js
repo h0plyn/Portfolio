@@ -8,7 +8,7 @@ export const projects = [
   { name: 'Covid Dashboard', imageUrl: covid_dashboard_mock },
 ]
 
-export const experience = [
+export const history = [
   {
     title: 'Fullstack Academy',
     year: '2021',
@@ -29,8 +29,5 @@ export const experience = [
 
 module.exports = {
   projects,
-  experience,
-  covid_dashboard_mock,
-  stooply_mock,
-  wallpaper_mock,
+  history,
 }

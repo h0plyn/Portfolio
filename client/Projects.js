@@ -1,15 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {
-  covid_dashboard_mock,
-  stooply_mock,
-  wallpaper_mock,
-} from './projectData'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   justify-content: center;
   background-color: #ecdccb;
 `
@@ -27,67 +22,74 @@ const Box = styled.div`
   margin-bottom: 1rem;
 `
 
-const Stooply = styled.div`
-  background-image: url(${stooply_mock});
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 350px;
-`
-const Wallpaper = styled.div`
-  background-image: url(${wallpaper_mock});
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 350px;
-`
-
-const CovidDashboard = styled.div`
-  background-image: url(${covid_dashboard_mock});
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 350px;
-  border: 1px solid red;
-`
 const Project = styled.div`
   background-image: url(${(props) => props.imageUrl});
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  height: 350px;
+  margin-top: 0;
+  min-height: 15rem;
+  margin-bottom: 1rem;
 `
 
 const Title = styled.h1`
-  color: white;
+  color: #1d403b;
+  font-size: 1.2rem;
+  margin: 0;
 `
 
 const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid red;
+`
+
+const HistoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
+const ExpHeader = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: space-between;
+`
+
+const Experience = styled.h1`
+  font-size: 1.7rem;
+  line-height: 2.48rem;
+  color: #3b5d55;
 `
 
 export default function Projects(props) {
-  let { data } = props
+  const { projects, history } = props.data
+  console.log(projects)
+  console.log(history)
   return (
     <Container>
-      {data.projects.map((project) => {
+      {projects.map((project) => {
         return (
-          <ProjectContainer>
+          <ProjectContainer key={project.name}>
             <Project imageUrl={project.imageUrl} />
             <Title>{project.name}</Title>
           </ProjectContainer>
         )
       })}
-      <MainText>Ricky Rhodes Photo</MainText>
-      <MainText>Fullstack Academy</MainText>
-      <MainText>Ohio University</MainText>
+      <Experience>Experience</Experience>
+      {history.map((exp) => {
+        console.log(exp)
+        return (
+          <HistoryContainer>
+            <ExpHeader key={exp.title}>
+              <Title>{exp.title}</Title>
+              <p>{exp.year}</p>
+            </ExpHeader>
+            <p>{exp.description}</p>
+          </HistoryContainer>
+        )
+      })}
     </Container>
   )
 }
