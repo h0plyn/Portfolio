@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { device } from './device'
-import covid_dashboard_mock from '../public/assets/covid_dashboard_mock.png'
-import stooply_mock from '../public/assets/stooply_mock.png'
-import wallpaper_mock from '../public/assets/wallpaper_mock.png'
+import {
+  covid_dashboard_mock,
+  stooply_mock,
+  wallpaper_mock,
+} from './projectData'
 
 const Container = styled.div`
   display: flex;
@@ -59,25 +60,29 @@ const Project = styled.div`
   background-repeat: no-repeat;
   width: 100%;
   height: 350px;
-  border: 1px solid red;
 `
 
 const Title = styled.h1`
   color: white;
 `
 
+const ProjectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+`
+
 export default function Projects(props) {
-  const { projects } = props
-  console.log(props)
+  let { data } = props
   return (
     <Container>
-      {projects.map((project) => {
-        console.log(project)
+      {data.projects.map((project) => {
         return (
-          <div>
+          <ProjectContainer>
             <Project imageUrl={project.imageUrl} />
             <Title>{project.name}</Title>
-          </div>
+          </ProjectContainer>
         )
       })}
       <MainText>Ricky Rhodes Photo</MainText>

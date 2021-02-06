@@ -11,7 +11,7 @@ function App() {
     <>
       <GlobalStyles />
       <Header />
-      <Projects projects={currentProjects} />
+      <Projects data={currentProjects} />
       <LinkBar />
     </>
   )
