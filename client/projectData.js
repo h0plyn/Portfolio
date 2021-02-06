@@ -3,9 +3,22 @@ import stooply_mock from '../public/assets/stooply_mock.png'
 import wallpaper_mock from '../public/assets/wallpaper_mock.png'
 
 export const projects = [
-  { name: 'Stooply', imageUrl: stooply_mock },
-  { name: 'Wallpaper', imageUrl: wallpaper_mock },
-  { name: 'Covid Dashboard', imageUrl: covid_dashboard_mock },
+  {
+    name: 'Stooply',
+    imageUrl: stooply_mock,
+    description:
+      'Building hyper-local community through the gift economy',
+  },
+  {
+    name: 'Wallpaper',
+    imageUrl: wallpaper_mock,
+    description: 'A marketplace for digital images',
+  },
+  {
+    name: 'Covid Dashboard',
+    imageUrl: covid_dashboard_mock,
+    description: 'Covid-19 Data Visualization',
+  },
 ]
 
 export const history = [

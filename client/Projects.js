@@ -8,19 +8,6 @@ const Container = styled.div`
   background-color: #ecdccb;
 `
 
-const MainText = styled.h1`
-  font-size: 1.7rem;
-  line-height: 2.48rem;
-  color: #3b5d55;
-`
-
-const Box = styled.div`
-  background-color: #3b5d55;
-  height: 350px;
-  width: 100%;
-  margin-bottom: 1rem;
-`
-
 const Title = styled.h1`
   color: #1d403b;
   font-size: 1.2rem;
@@ -52,29 +39,16 @@ const ProjectImage = styled.div`
   margin-bottom: 1rem;
 `
 
-const HistoryContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`
-const ExpHeader = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: space-between;
-`
-
-const Experience = styled.h1`
-  font-size: 1.7rem;
-  line-height: 2.48rem;
-  color: #3b5d55;
-`
-
 const AllProjects = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
+
+const Description = styled.p`
+  font-size: .7rem;
+  margin-bottom: 1.7rem;
 `
 
 export default function Projects(props) {
@@ -88,6 +62,7 @@ export default function Projects(props) {
             <ProjectContainer key={project.name}>
               <ProjectImage imageUrl={project.imageUrl} />
               <Title>{project.name}</Title>
+              <Description>{project.description}</Description>
             </ProjectContainer>
           )
         })}

@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import Header from './Header'
-
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -42,11 +40,11 @@ export default function LinkBar() {
         href="https://www.instagram.com/rickyrhodes/"
         target="blank"
       ></Icon>
-      <Icon
+      {/* <Icon
         className="icon fas fa-info-circle fa-2x"
         alt="Information"
         onClick={() => setInfo(!info)}
-      ></Icon>
+      ></Icon> */}
     </Container>
     // <div className="flex">
     //   {info

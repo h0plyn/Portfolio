@@ -26,7 +26,11 @@ export default function Header(props) {
   return (
     <Container>
       <MainText>
-        Hi, I'm <Highlight>Ricky Rhodes</Highlight>.
+        Hi, I'm{' '}
+        <span style={{ color: '#1d403b', fontStyle: 'italic' }}>
+          Ricky Rhodes
+        </span>
+        .
       </MainText>
       <MainText>
         A former{' '}
