@@ -6,6 +6,7 @@ import Header from './Header'
 import Projects from './Projects'
 import currentProjects from './projectData'
 import Shape from './Shape'
+import History from './History'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Shape />
       <Header />
       <Projects data={currentProjects} />
+      <History data={currentProjects} />
       <LinkBar />
     </>
   )

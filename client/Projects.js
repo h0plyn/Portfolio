@@ -78,7 +78,7 @@ const AllProjects = styled.div`
 `
 
 export default function Projects(props) {
-  const { projects, history } = props.data
+  const { projects } = props.data
 
   return (
     <Container>
@@ -92,19 +92,6 @@ export default function Projects(props) {
           )
         })}
       </AllProjects>
-
-      <Experience>Previous</Experience>
-      {history.map((exp) => {
-        return (
-          <HistoryContainer key={exp.title}>
-            <ExpHeader>
-              <Title>{exp.title}</Title>
-              <p>{exp.year}</p>
-            </ExpHeader>
-            <p>{exp.description}</p>
-          </HistoryContainer>
-        )
-      })}
     </Container>
   )
 }
