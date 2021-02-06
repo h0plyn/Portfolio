@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* padding: 1rem 2rem; */
   justify-content: center;
   background-color: #ecdccb;
 `
@@ -22,18 +21,6 @@ const Box = styled.div`
   margin-bottom: 1rem;
 `
 
-const Project = styled.div`
-  background-image: url(${(props) => props.imageUrl});
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  margin-top: 0;
-  height: 60vh;
-  margin-bottom: 1rem;
-  border: 1px solid red;
-`
-
 const Title = styled.h1`
   color: #1d403b;
   font-size: 1.2rem;
@@ -44,6 +31,25 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 90%;
+`
+
+const ProjectImage = styled.div`
+  background-image: url(${(props) => props.imageUrl});
+  flex: 1;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  padding-top: 10%;
+  padding-bottom: 47%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
 `
 
 const HistoryContainer = styled.div`
@@ -64,22 +70,31 @@ const Experience = styled.h1`
   color: #3b5d55;
 `
 
+const AllProjects = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
 export default function Projects(props) {
   const { projects, history } = props.data
 
   return (
     <Container>
-      {projects.map((project) => {
-        return (
-          <ProjectContainer key={project.name}>
-            <Project imageUrl={project.imageUrl} />
-            <Title>{project.name}</Title>
-          </ProjectContainer>
-        )
-      })}
+      <AllProjects>
+        {projects.map((project) => {
+          return (
+            <ProjectContainer key={project.name}>
+              <ProjectImage imageUrl={project.imageUrl} />
+              <Title>{project.name}</Title>
+            </ProjectContainer>
+          )
+        })}
+      </AllProjects>
+
       <Experience>Previous</Experience>
       {history.map((exp) => {
-        console.log(exp)
         return (
           <HistoryContainer key={exp.title}>
             <ExpHeader>
