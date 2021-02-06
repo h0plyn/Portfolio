@@ -12,8 +12,7 @@ export const history = [
   {
     title: 'Fullstack Academy',
     year: '2021',
-    description:
-      'A 17-week Software Engineering Immersive. Built Fullstack JavaScript applications through team and individual projects. Gained experience in pair programing & technical project management.',
+    description: 'Software Engineering Immersive Program',
   },
   {
     title: 'Ricky Rhodes Photo',
