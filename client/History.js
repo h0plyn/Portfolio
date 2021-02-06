@@ -6,6 +6,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: #ecdccb;
+  width: 90%;
+  margin: 1rem;
 `
 
 const Title = styled.h1`
@@ -18,6 +20,7 @@ const HistoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 1rem;
 `
 const ExpHeader = styled.div`
   display: flex;
@@ -29,6 +32,10 @@ const ExpHeader = styled.div`
 const Experience = styled.h1`
   font-size: 1.7rem;
   line-height: 2.48rem;
+  color: #1d403b;
+  margin-bottom: 1rem;
+`
+const Description = styled.p`
   color: #3b5d55;
 `
 
@@ -45,7 +52,7 @@ export default function History(props) {
               <Title>{exp.title}</Title>
               <p>{exp.year}</p>
             </ExpHeader>
-            <p>{exp.description}</p>
+            <Description>{exp.description}</Description>
           </HistoryContainer>
         )
       })}

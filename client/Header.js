@@ -46,7 +46,7 @@ export default function Header(props) {
           style={{ fontSize: '12px' }}
           onClick={() => setReadMore(!readMore)}
         >
-          Read more...
+          Read {readMore ? 'less...' : 'more...'}
         </span>
       </MainText>
       {readMore && (

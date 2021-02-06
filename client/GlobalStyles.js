@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: #ecdccb;
     color: #1d403b;
     font-family: Helvetica, sans-serif;
+    scroll-behavior: smooth;
     font-size: 16px;
   }
 

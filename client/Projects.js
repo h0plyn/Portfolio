@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -47,7 +48,7 @@ const AllProjects = styled.div`
 `
 
 const Description = styled.p`
-  font-size: .7rem;
+  font-size: 0.7rem;
   margin-bottom: 1.7rem;
 `
 
