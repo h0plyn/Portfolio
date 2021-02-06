@@ -25,7 +25,7 @@ const HistoryContainer = styled.div`
 const ExpHeader = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: space-between;
 `
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -26,18 +26,22 @@ const ProjectContainer = styled.div`
 
 const ProjectImage = styled.div`
   background-image: url(${(props) => props.imageUrl});
-  flex: 1;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  padding-top: 10%;
-  padding-bottom: 47%;
+  height: ${(props) => (props.aspect === 'vertical' ? '75vw' : '50vw')};
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
   margin-bottom: 1rem;
+
+  a {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+  }
 `
 
 const AllProjects = styled.div`
@@ -54,6 +58,7 @@ const Description = styled.p`
 
 export default function Projects(props) {
   const { projects } = props.data
+  console.log(props)
 
   return (
     <Container>
@@ -61,7 +66,9 @@ export default function Projects(props) {
         {projects.map((project) => {
           return (
             <ProjectContainer key={project.name}>
-              <ProjectImage imageUrl={project.imageUrl} />
+              <ProjectImage imageUrl={project.imageUrl} aspect={project.aspect}>
+                <a href={project.projectUrl}></a>
+              </ProjectImage>
               <Title>{project.name}</Title>
               <Description>{project.description}</Description>
             </ProjectContainer>

@@ -6,18 +6,23 @@ export const projects = [
   {
     name: 'Stooply',
     imageUrl: stooply_mock,
-    description:
-      'Building hyper-local community through the gift economy',
+    description: 'Building hyper-local community through the gift economy',
+    projectUrl: 'https://github.com/h0plyn/stooply',
+    aspect: 'vertical',
   },
   {
     name: 'Wallpaper',
     imageUrl: wallpaper_mock,
     description: 'A marketplace for digital images',
+    projectUrl: 'https://github.com/2011-FSA-Alpha/GraceShopper',
+    aspect: 'horizontal',
   },
   {
     name: 'Covid Dashboard',
     imageUrl: covid_dashboard_mock,
     description: 'Covid-19 Data Visualization',
+    projectUrl: 'https://github.com/garretthaas/covid-dashboard',
+    aspect: 'horizontal',
   },
 ]
 

@@ -11,6 +11,7 @@ const Container = styled.div`
 
 const MainText = styled.h1`
   font-size: 1.7rem;
+  font-weight: 250;
   line-height: 2.48rem;
   color: #3b5d55;
   line-height: 2.5rem;
@@ -27,18 +28,14 @@ export default function Header(props) {
     <Container>
       <MainText>
         Hi, I'm{' '}
-        <span style={{ color: '#1d403b', fontStyle: 'italic' }}>
+        <span style={{ color: '#1d403b', fontWeight: '400' }}>
           Ricky Rhodes
         </span>
         .
       </MainText>
       <MainText>
-        A former{' '}
-        <span style={{ color: '#1d403b', fontStyle: 'italic' }}>
-          creative professional
-        </span>{' '}
-        turned{' '}
-        <span style={{ color: '#1d403b', fontStyle: 'italic' }}>
+        A former creative professional turned{' '}
+        <span style={{ color: '#1d403b', fontWeight: '400' }}>
           Fullstack Software Engineer
         </span>
         .{' '}
@@ -52,7 +49,7 @@ export default function Header(props) {
       {readMore && (
         <MainText>
           I'm currently learning at{' '}
-          <span style={{ color: '#1d403b', fontStyle: 'italic' }}>
+          <span style={{ color: '#1d403b', fontWeight: '400' }}>
             Fullstack Academy
           </span>
           . In the meantime, you can check out my current work and info below.{' '}
