@@ -4,13 +4,14 @@ import GlobalStyles from './GlobalStyles'
 import LinkBar from './LinkBar'
 import Header from './Header'
 import Projects from './Projects'
+import currentProjects from './projectData'
 
 function App() {
   return (
     <>
       <GlobalStyles />
       <Header />
-      <Projects />
+      <Projects projects={currentProjects} />
       <LinkBar />
     </>
   )

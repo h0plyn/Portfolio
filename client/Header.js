@@ -36,13 +36,13 @@ export default function Header(props) {
         </span>
         .
       </MainText>
-      <MainText>
+      {/* <MainText>
         I'm currently learning at{' '}
         <span style={{ color: '#1d403b', fontStyle: 'italic' }}>
           Fullstack Academy
         </span>
         . In the meantime, you can check out my current work and info below.{' '}
-      </MainText>
+      </MainText> */}
     </Container>
   )
 }
