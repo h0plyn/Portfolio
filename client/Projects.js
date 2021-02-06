@@ -22,6 +22,9 @@ const ProjectContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 90%;
+  @media screen and (min-width: 960px) {
+    flex-direction: row;
+  }
 `
 
 const ProjectImage = styled.div`
@@ -40,7 +43,7 @@ const ProjectImage = styled.div`
   a {
     position: absolute;
     width: 90%;
-    height: 100%;
+    height: ${(props) => (props.aspect === 'vertical' ? '50%' : '30%')};
   }
 `
 
