@@ -34,7 +34,7 @@ export const history = [
   },
   {
     title: 'Ricky Rhodes Photo',
-    year: '2010-2021',
+    year: '2010 - 2021',
     description: 'Editorial and Advertising Photographer/Director',
   },
   {

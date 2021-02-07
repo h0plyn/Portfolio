@@ -26,7 +26,7 @@ const ExpHeader = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-start;
-  align-items: space-between;
+  align-items: flex-end;
 `
 
 const Experience = styled.h1`
@@ -37,6 +37,10 @@ const Experience = styled.h1`
 `
 const Description = styled.p`
   color: #3b5d55;
+`
+
+const Year = styled.div`
+  margin-left: 1rem;
 `
 
 export default function History(props) {
@@ -50,7 +54,7 @@ export default function History(props) {
           <HistoryContainer key={exp.title}>
             <ExpHeader>
               <Title>{exp.title}</Title>
-              <p>{exp.year}</p>
+              <Year>{exp.year}</Year>
             </ExpHeader>
             <Description>{exp.description}</Description>
           </HistoryContainer>
