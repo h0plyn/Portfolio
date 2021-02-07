@@ -14,10 +14,10 @@ function App() {
     <Router>
       <GlobalStyles />
       <Shape />
+      <LinkBar />
       <Header />
       <Projects data={currentProjects} />
       <History data={currentProjects} />
-      <LinkBar />
     </Router>
   )
 }

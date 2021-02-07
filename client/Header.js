@@ -6,7 +6,6 @@ const Container = styled.div`
   flex-direction: column;
   padding: 1rem 2rem;
   justify-content: center;
-  margin-top: 5vh;
 `
 
 const MainText = styled.h1`
@@ -22,6 +21,11 @@ const Highlight = styled.span`
   font-style: 'italic';
 `
 
+const Text = styled.p`
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+`
+
 export default function Header(props) {
   const [readMore, setReadMore] = useState(false)
   return (
@@ -34,26 +38,32 @@ export default function Header(props) {
         .
       </MainText>
       <MainText>
-        A former creative professional turned{' '}
+        A
         <span style={{ color: '#1d403b', fontWeight: '400' }}>
+          {' '}
           Fullstack Software Engineer
-        </span>
-        .{' '}
-        <span
+        </span>{' '}
+        and former creative profesional.{' '}
+        <div
           style={{ fontSize: '12px' }}
           onClick={() => setReadMore(!readMore)}
         >
           Read {readMore ? 'less...' : 'more...'}
-        </span>
+        </div>
       </MainText>
       {readMore && (
-        <MainText>
-          I'm currently learning at{' '}
-          <span style={{ color: '#1d403b', fontWeight: '400' }}>
-            Fullstack Academy
-          </span>
-          . In the meantime, you can check out my current work and info below.{' '}
-        </MainText>
+        <div>
+          <Text>
+            I was raised in a small farm town outside of Cleveland, OH. When not
+            reading documentation, you can find me fly fishing or walking my
+            giant Newfoundland dog. I am currently focusing on Fullstack
+            JavaScript using React, Express, Node, and Postgres.{' '}
+          </Text>
+          <Text>
+            I'm currently dabbling in React Native, Python, Solidity,
+            Blockchain, and Firebase.
+          </Text>
+        </div>
       )}
     </Container>
   )

@@ -4,7 +4,8 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 3vh;
 `
 
 const Icon = styled.a`
