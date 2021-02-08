@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -73,17 +72,31 @@ const Description = styled.p`
   margin-bottom: 1.7rem;
   @media screen and (min-width: 960px) {
     font-size: 1.3rem;
+    font-weight: 300;
   }
 `
 
 const QueryFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media screen and (min-width: 960px) {
     display: flex;
     flex-direction: column;
     flex: 1;
     width: 100%;
     height: 100%;
-    /* border: 1px solid red; */
+  }
+`
+const HeaderProj = styled.h1`
+  font-size: 1.3rem;
+  line-height: 2.48rem;
+  color: #1d403b;
+  margin-bottom: 0.3rem;
+  @media screen and (min-width: 960px) {
+    font-size: 3rem;
+    margin-bottom: 1.3rem;
   }
 `
 
@@ -92,6 +105,7 @@ export default function Projects(props) {
   return (
     <Container>
       <AllProjects>
+        <HeaderProj>Projects</HeaderProj>
         {projects.map((project) => {
           return (
             <ProjectContainer key={project.name}>

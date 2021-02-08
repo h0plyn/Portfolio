@@ -8,6 +8,7 @@ import Projects from './Projects'
 import currentProjects from './projectData'
 import Shape from './Shape'
 import History from './History'
+import Footer from './Footer'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Projects data={currentProjects} />
       <History data={currentProjects} />
+      <Footer />
     </Router>
   )
 }

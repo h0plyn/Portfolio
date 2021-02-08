@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import LinkBar from './LinkBar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -11,7 +13,6 @@ const Container = styled.div`
 
 const MainText = styled.h1`
   font-size: 1.7rem;
-  font-weight: 250;
   line-height: 2.48rem;
   color: #3b5d55;
   line-height: 2.5rem;
@@ -20,11 +21,6 @@ const MainText = styled.h1`
     line-height: 4rem;
     margin-top: 2.7rem;
   }
-`
-
-const Highlight = styled.span`
-  color: '#1d403b';
-  font-style: 'italic';
 `
 
 const Text = styled.p`
@@ -39,10 +35,10 @@ const Text = styled.p`
 
 const DropdownButton = styled.p`
   font-size: 1.2rem;
-  color: black;
+  color: white;
 
   @media screen and (min-width: 960px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `
 
@@ -50,7 +46,7 @@ export default function Header(props) {
   const [readMore, setReadMore] = useState(false)
   return (
     <Container>
-      <LinkBar/>
+      <LinkBar />
       <MainText>
         Hi, I'm{' '}
         <span style={{ color: '#1d403b', fontWeight: '400' }}>
@@ -65,12 +61,9 @@ export default function Header(props) {
           Fullstack Software Engineer
         </span>{' '}
         and former creative profesional.{' '}
-        <div
-          style={{ fontSize: '12px' }}
-          onClick={() => setReadMore(!readMore)}
-        >
+        <div onClick={() => setReadMore(!readMore)}>
           <DropdownButton>
-            Read {readMore ? 'less...' : 'more...'}
+            Read {readMore ? 'less...' : 'more...'}{' '}
           </DropdownButton>
         </div>
       </MainText>
