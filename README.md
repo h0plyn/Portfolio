@@ -8,12 +8,16 @@ This portfolio website will hold completed projects, links to social media and o
 
 ## To Do:
 
-1. Style Components with Styled-Components
-2. Add projects feature
-3. Add past work history feature
+1. Fix margins and alignment
+2. Add more information to previous experience
+3. Add smooth drop down
+4. Edit 'Read more...' copy
+5. Style 'Read more...' section
 
 ### Tech
 
 - React
+- React Hooks
+- Styled-Components
 - Parcel
 - Netlify
