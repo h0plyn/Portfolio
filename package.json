@@ -22,15 +22,12 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "i": "^0.3.6",
     "npm": "^7.5.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "reset.css": "^2.0.2",
-    "styled": "^1.0.0",
-    "styled-components": "^5.2.1",
-    "x": "^0.1.2"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
