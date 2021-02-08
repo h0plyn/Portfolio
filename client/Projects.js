@@ -27,6 +27,7 @@ const ProjectContainer = styled.div`
   width: 90%;
   @media screen and (min-width: 960px) {
     flex-direction: row;
+    justify-content: center;
     margin-bottom: 5rem;
   }
 `
@@ -50,6 +51,7 @@ const ProjectImage = styled.div`
   }
 
   @media screen and (min-width: 960px) {
+    display: inline-flex;
     flex-direction: row;
     flex: 2;
     width: 35%;
@@ -79,7 +81,9 @@ const QueryFlex = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
   }
 `
 

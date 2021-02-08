@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import LinkBar from './LinkBar'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -49,6 +50,7 @@ export default function Header(props) {
   const [readMore, setReadMore] = useState(false)
   return (
     <Container>
+      <LinkBar/>
       <MainText>
         Hi, I'm{' '}
         <span style={{ color: '#1d403b', fontWeight: '400' }}>
