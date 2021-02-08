@@ -14,6 +14,11 @@ const MainText = styled.h1`
   line-height: 2.48rem;
   color: #3b5d55;
   line-height: 2.5rem;
+  @media screen and (min-width: 960px) {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-top: 2.7rem;
+  }
 `
 
 const Highlight = styled.span`
@@ -24,6 +29,20 @@ const Highlight = styled.span`
 const Text = styled.p`
   font-size: 0.9rem;
   line-height: 1.5rem;
+  @media screen and (min-width: 960px) {
+    width: 75vw;
+    font-size: 1.5rem;
+    line-height: 4rem;
+  }
+`
+
+const DropdownButton = styled.p`
+  font-size: 1.2rem;
+  color: black;
+
+  @media screen and (min-width: 960px) {
+    font-size: 2rem;
+  }
 `
 
 export default function Header(props) {
@@ -48,7 +67,9 @@ export default function Header(props) {
           style={{ fontSize: '12px' }}
           onClick={() => setReadMore(!readMore)}
         >
-          Read {readMore ? 'less...' : 'more...'}
+          <DropdownButton>
+            Read {readMore ? 'less...' : 'more...'}
+          </DropdownButton>
         </div>
       </MainText>
       {readMore && (
