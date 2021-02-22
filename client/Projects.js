@@ -1,12 +1,36 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+
+export default function Projects(props) {
+  const { projects } = props.data;
+  return (
+    <Container>
+      <AllProjects>
+        <HeaderProj>Projects</HeaderProj>
+        {projects.map((project) => {
+          return (
+            <ProjectContainer key={project.name}>
+              <ProjectImage imageUrl={project.imageUrl} aspect={project.aspect}>
+                <a href={project.projectUrl}></a>
+              </ProjectImage>
+              <QueryFlex>
+                <Title>{project.name}</Title>
+                <Description>{project.description}</Description>
+              </QueryFlex>
+            </ProjectContainer>
+          );
+        })}
+      </AllProjects>
+    </Container>
+  );
+}
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #ecdccb;
-`
+`;
 
 const Title = styled.h1`
   color: #1d403b;
@@ -15,7 +39,7 @@ const Title = styled.h1`
   @media screen and (min-width: 960px) {
     font-size: 1.7rem;
   }
-`
+`;
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -29,7 +53,7 @@ const ProjectContainer = styled.div`
     justify-content: center;
     margin-bottom: 5rem;
   }
-`
+`;
 
 const ProjectImage = styled.div`
   background-image: url(${(props) => props.imageUrl});
@@ -58,14 +82,14 @@ const ProjectImage = styled.div`
     margin: 0;
     padding: 0;
   }
-`
+`;
 
 const AllProjects = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const Description = styled.p`
   font-size: 0.7rem;
@@ -74,7 +98,7 @@ const Description = styled.p`
     font-size: 1.3rem;
     font-weight: 300;
   }
-`
+`;
 
 const QueryFlex = styled.div`
   display: flex;
@@ -88,7 +112,7 @@ const QueryFlex = styled.div`
     width: 100%;
     height: 100%;
   }
-`
+`;
 const HeaderProj = styled.h1`
   font-size: 1.3rem;
   line-height: 2.48rem;
@@ -98,28 +122,4 @@ const HeaderProj = styled.h1`
     font-size: 3rem;
     margin-bottom: 1.3rem;
   }
-`
-
-export default function Projects(props) {
-  const { projects } = props.data
-  return (
-    <Container>
-      <AllProjects>
-        <HeaderProj>Projects</HeaderProj>
-        {projects.map((project) => {
-          return (
-            <ProjectContainer key={project.name}>
-              <ProjectImage imageUrl={project.imageUrl} aspect={project.aspect}>
-                <a href={project.projectUrl}></a>
-              </ProjectImage>
-              <QueryFlex>
-                <Title>{project.name}</Title>
-                <Description>{project.description}</Description>
-              </QueryFlex>
-            </ProjectContainer>
-          )
-        })}
-      </AllProjects>
-    </Container>
-  )
-}
+`;
