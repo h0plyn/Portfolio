@@ -27,19 +27,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: #ecdccb;
-  width: 90%;
-  margin: 1rem;
+  width: 100%;
+  background-color: #1d403b;
+  padding: 2rem;
   @media screen and (min-width: 960px) {
-    padding-left: 20rem;
-  }
-`;
-
-const Title = styled.h1`
-  color: #1d403b;
-  font-size: 1.2rem;
-  margin: 0;
-  @media screen and (min-width: 960px) {
-    font-size: 2rem;
   }
 `;
 
@@ -48,10 +39,25 @@ const HistoryContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 1rem;
+  border-top: 1px solid #ecdccb;
+  padding-top: 1rem;
+  width: 100%;
   @media screen and (min-width: 960px) {
   }
 `;
+
+const Title = styled.h1`
+  color: #ecdccb;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  @media screen and (min-width: 960px) {
+    font-size: 2rem;
+  }
+`;
+
 const ExpHeader = styled.div`
+  color: #ecdccb;
   display: flex;
   width: 100%;
   justify-content: flex-start;
@@ -59,9 +65,11 @@ const ExpHeader = styled.div`
 `;
 
 const Experience = styled.h1`
+  font-family: nimbus-sans-extended, sans-serif;
+  font-weight: 300;
   font-size: 1.7rem;
   line-height: 2.48rem;
-  color: #1d403b;
+  color: #ecdccb;
   margin-bottom: 1rem;
   @media screen and (min-width: 960px) {
     font-size: 3rem;
@@ -69,7 +77,10 @@ const Experience = styled.h1`
   }
 `;
 const Description = styled.p`
-  color: #3b5d55;
+  color: #ecdccb;
+  font-size: 0.8rem;
+  font-weight: 200;
+
   @media screen and (min-width: 960px) {
     font-size: 1.4rem;
     font-weight: 300;
@@ -77,7 +88,9 @@ const Description = styled.p`
 `;
 
 const Year = styled.div`
+  font-size: 0.8rem;
   margin-left: 1rem;
+  font-weight: 300;
   @media screen and (min-width: 960px) {
     font-size: 1.2rem;
   }
