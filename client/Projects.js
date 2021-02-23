@@ -32,9 +32,11 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
+  font-family: nimbus-sans-extended, sans-serif;
+  font-weight: 300;
   color: #1d403b;
   font-size: 1.2rem;
-  margin: 0;
+  margin-bottom: 1.1rem;
   @media screen and (min-width: 960px) {
     font-size: 1.7rem;
   }

@@ -1,22 +1,24 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-bottom: 3rem;
-  width: 90%;
-`
+  margin-bottom: 1.5rem;
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+`;
 
 const Icon = styled.a`
   color: #1d403b;
   text-decoration: none;
   padding: 0.25rem;
-`
+`;
 
 export default function LinkBar() {
-  const [info, setInfo] = useState(false)
+  const [info, setInfo] = useState(false);
 
   return (
     <Container>
@@ -44,5 +46,5 @@ export default function LinkBar() {
         target="blank"
       ></Icon>
     </Container>
-  )
+  );
 }
