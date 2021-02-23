@@ -6,7 +6,6 @@ export default function Projects(props) {
   return (
     <Container>
       <AllProjects>
-        <HeaderProj>Projects</HeaderProj>
         {projects.map((project) => {
           return (
             <ProjectContainer key={project.name}>

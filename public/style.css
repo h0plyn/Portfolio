@@ -1,106 +1,11 @@
-/* @import 'reset.css';
-
-body {
-  background-color: #ecdccb;
-  color: #1d403b;
-  font-family: Helvetica, sans-serif;
-  font-size: 16px;
-} */
-
-/* h1 {
-  font-size: 4em;
-  line-height: 100%;
-  letter-spacing: 0.1rem;
-  color: #3b5d55;
+@font-face {
+  font-family: 'Nimbus Mono';
+  src: local('Nimbus Mono'),
+    url(./fonts/nimbusmono-regular.otf) format('opentype');
 }
 
-a {
-  color: #1d403b;
-  text-decoration: none;
+@font-face {
+  font-family: 'Nimbus Mono';
+  font-weight: bold;
+  src: local('Nimbus Mono'), url(./fonts/nimbusmono-bold.otf) format('opentype');
 }
-
-a:visited {
-  color: #1d403b;
-  text-decoration: none;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 4rem;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-}
-
-.flex {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-}
-
-.icon {
-  margin: 1rem 0.625rem 3rem 0.625rem;
-}
-
-.text {
-  font-size: 1.7rem;
-}
-
-.main-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  width: 80vw;
-} */
-
-/* @media screen and (min-width: 620px) {
-  body {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 4rem;
-    color: #3b5d55;
-  }
-
-  .info {
-    width: 50vw;
-  }
-
-  .main-text {
-    display: flex;
-    width: 90vw;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  body {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 4rem;
-    color: #1d403b;
-  }
-
-  .info {
-    width: 50vw;
-  }
-
-  .main-text {
-    display: flex;
-    width: 90vw;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-  }
-} */

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -10,7 +10,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     background-color: #ecdccb;
     color: #1d403b;
-    font-family: 'Work Sans', sans-serif;
+    font-family: Nimbus Mono, monospace;
+    font-weight: bold;
     scroll-behavior: smooth;
     font-size: 16px;
   }
@@ -50,6 +51,6 @@ const GlobalStyles = createGlobalStyle`
         height: 28px;
     }
 }
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

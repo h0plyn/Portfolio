@@ -9,40 +9,31 @@ export default function Header(props) {
   return (
     <Container>
       <LinkBar />
+      <MainText>Hi, I'm Ricky Rhodes.</MainText>
       <MainText>
-        Hi, I'm{' '}
-        <span style={{ color: '#1d403b', fontWeight: '400' }}>
-          Ricky Rhodes
-        </span>
-        .
-      </MainText>
-      <MainText>
-        A
-        <span style={{ color: '#1d403b', fontWeight: '400' }}>
-          {' '}
-          Fullstack Software Engineer
-        </span>{' '}
-        and former creative profesional.{' '}
-        <div onClick={() => setReadMore(!readMore)}>
-          <DropdownButton>
-            Read {readMore ? 'less...' : 'more...'}{' '}
-          </DropdownButton>
-        </div>
+        A Fullstack Software Engineer and former creative profesional.
       </MainText>
       {readMore && (
         <div>
-          <Text>
-            I was raised in a small farm town outside of Cleveland, OH. When not
-            reading documentation, you can find me fly fishing or walking my
-            giant Newfoundland dog. I am currently focusing on Fullstack
-            JavaScript using React, Express, Node, and Postgres.{' '}
-          </Text>
-          <Text>
-            I'm currently dabbling in React Native, Python, Solidity,
-            Blockchain, and Firebase.
-          </Text>
+          <ExtendedAbout>
+            Currently focusing on Fullstack JavaScript using React, Express,
+            Node, and Postgres.{' '}
+          </ExtendedAbout>
+          <ExtendedAbout>
+            Also, dabbling in React Native, Python, Solidity, and Firebase.
+          </ExtendedAbout>
+          <ExtendedAbout>
+            I was raised in a small farm town outside of Cleveland, OH.
+          </ExtendedAbout>
+          <ExtendedAbout>
+            When not reading documentation, you can find me fly fishing or
+            walking my giant Newfoundland dog.
+          </ExtendedAbout>
         </div>
       )}
+      <div onClick={() => setReadMore(!readMore)}>
+        <DropdownButton>[read {readMore ? 'less]' : 'more]'} </DropdownButton>
+      </div>
     </Container>
   );
 }
@@ -55,20 +46,37 @@ const Container = styled.div`
 `;
 
 const MainText = styled.h1`
-  font-size: 1.7rem;
-  line-height: 2.48rem;
-  color: #3b5d55;
-  line-height: 2.5rem;
+  font-family: nimbus-sans, sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #1d403b;
+  margin-bottom: 1rem;
   @media screen and (min-width: 960px) {
-    font-size: 3rem;
+    font-size: 2rem;
+    line-height: 4rem;
+    margin-top: 2.7rem;
+  }
+`;
+
+const ExtendedAbout = styled.h1`
+  font-family: nimbus-sans, sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  color: #1d403b;
+  margin-bottom: 1rem;
+  @media screen and (min-width: 960px) {
+    font-size: 2rem;
     line-height: 4rem;
     margin-top: 2.7rem;
   }
 `;
 
 const Text = styled.p`
-  font-size: 0.9rem;
-  line-height: 1.5rem;
+  font-family: nimbus-sans, sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
   @media screen and (min-width: 960px) {
     width: 75vw;
     font-size: 1.5rem;
@@ -77,9 +85,10 @@ const Text = styled.p`
 `;
 
 const DropdownButton = styled.p`
-  font-size: 1.2rem;
-  color: white;
-
+  font-family: Nimbus Mono;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   @media screen and (min-width: 960px) {
     font-size: 1.5rem;
   }
