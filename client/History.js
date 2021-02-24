@@ -13,8 +13,9 @@ export default function History(props) {
             <ExpHeader>
               <Title>{exp.title}</Title>
               <Year>{exp.year}</Year>
+              <Description>{exp.description}</Description>
             </ExpHeader>
-            <Description>{exp.description}</Description>
+            <DescriptionMobile>{exp.description}</DescriptionMobile>
           </HistoryContainer>
         );
       })}
@@ -31,6 +32,19 @@ const Container = styled.div`
   background-color: #1d403b;
   padding: 2rem;
   @media screen and (min-width: 960px) {
+    padding: 10rem 14rem;
+  }
+`;
+
+const Experience = styled.h1`
+  font-family: nimbus-sans-extended, sans-serif;
+  font-weight: 300;
+  font-size: 1.7rem;
+  line-height: 2.48rem;
+  color: #ecdccb;
+  @media screen and (min-width: 960px) {
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
   }
 `;
 
@@ -43,16 +57,9 @@ const HistoryContainer = styled.div`
   padding-top: 1rem;
   width: 100%;
   @media screen and (min-width: 960px) {
-  }
-`;
-
-const Title = styled.h1`
-  color: #ecdccb;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1.3px;
-  @media screen and (min-width: 960px) {
-    font-size: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 0rem;
   }
 `;
 
@@ -60,30 +67,49 @@ const ExpHeader = styled.div`
   color: #ecdccb;
   display: flex;
   width: 100%;
-  justify-content: flex-start;
-  align-items: flex-end;
-`;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
+  margin-bottom: 0.5rem;
 
-const Experience = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
-  font-weight: 300;
-  font-size: 1.7rem;
-  line-height: 2.48rem;
-  color: #ecdccb;
-  margin-bottom: 1rem;
   @media screen and (min-width: 960px) {
-    font-size: 3rem;
-    margin-bottom: 1.3rem;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
-const Description = styled.p`
+
+const Title = styled.h1`
+  font-family: nimbus-sans-extended, sans-serif;
+  color: #ecdccb;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  @media screen and (min-width: 960px) {
+    font-size: 1.5rem;
+    flex: 1;
+  }
+`;
+
+const DescriptionMobile = styled.p`
   color: #ecdccb;
   font-size: 0.8rem;
   font-weight: 200;
 
   @media screen and (min-width: 960px) {
-    font-size: 1.4rem;
-    font-weight: 300;
+    display: none;
+  }
+`;
+
+const Description = styled.p`
+  display: none;
+  @media screen and (min-width: 960px) {
+    display: flex;
+    color: #ecdccb;
+    font-size: 0.8rem;
+    font-weight: 200;
+    font-size: 1.2rem;
+    flex: 2;
+    margin-right: 3rem;
+    margin-top: 8px;
   }
 `;
 
@@ -91,7 +117,11 @@ const Year = styled.div`
   font-size: 0.8rem;
   margin-left: 1rem;
   font-weight: 300;
+  margin-top: 5px;
+
   @media screen and (min-width: 960px) {
+    margin-top: 8px;
     font-size: 1.2rem;
+    flex: 1;
   }
 `;

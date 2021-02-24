@@ -21,17 +21,24 @@ const FooterContainer = styled.div`
   flex-direction: column;
   width: 100%;
   background-color: #1d403b;
-  padding-top: 3rem;
+  /* padding-top: 3rem; */
   padding-bottom: 3rem;
   padding-left: 2rem;
+  @media screen and (min-width: 960px) {
+    padding-left: 14rem;
+  }
 `;
 
 const BackToTop = styled.div`
-  font-family: nimbus-sans, sans-serif;
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
   font-size: 1.3rem;
   margin-bottom: 0.7rem;
   color: #ecdccb;
+  cursor: pointer;
+  @media screen and (min-width: 960px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const Copyright = styled.h4`
@@ -39,4 +46,7 @@ const Copyright = styled.h4`
   font-weight: 300;
   font-size: 0.8rem;
   color: #ecdccb;
+  @media screen and (min-width: 960px) {
+    font-size: 1.1rem;
+  }
 `;
