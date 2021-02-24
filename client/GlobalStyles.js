@@ -16,25 +16,6 @@ const GlobalStyles = createGlobalStyle`
     font-size: 16px;
   }
 
-  .project-image {
-    height: ${(p) => (p.aspect === 'vertical' ? '75vw' : '50vw')};
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    border: 2px solid black;
-
-    @media screen and (min-width: 960px) {
-        /* display: inline-flex; */
-        flex-direction: row;
-        flex: 1;
-        /* width: 35%; */
-        height: ${(p) => (p.aspect === 'vertical' ? '30vw' : '25vw')};
-        margin: 0;
-        padding: 0;
-    }
-  }
-
   .custom-shape-divider-top-1612623275 {
     position: absolute;
     top: 0;
