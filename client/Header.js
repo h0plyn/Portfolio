@@ -43,7 +43,9 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   /* border: 2px solid red; */
-  padding-top: 10rem;
+  @media screen and (min-width: 960px) {
+    padding-top: 10rem;
+  }
 `;
 
 const ContentBox = styled.div`
