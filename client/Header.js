@@ -7,9 +7,9 @@ export default function Header(props) {
     <Container>
       <ContentBox>
         <MainText>Hi, I'm Ricky Rhodes.</MainText>
-        <MainText>
+        <SubText>
           A Fullstack Software Engineer and former creative profesional.
-        </MainText>
+        </SubText>
         {readMore && (
           <div>
             <ExtendedAbout>
@@ -51,9 +51,9 @@ const ContentBox = styled.div`
 `;
 
 const MainText = styled.h1`
-  font-family: nimbus-sans, sans-serif;
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 3rem;
   color: #1d403b;
   margin-bottom: 1rem;
@@ -65,13 +65,29 @@ const MainText = styled.h1`
   }
 `;
 
-const ExtendedAbout = styled.h1`
-  font-family: nimbus-sans, sans-serif;
+const SubText = styled.h1`
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  color: #1d403b;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  @media screen and (min-width: 960px) {
+    font-size: 2rem;
+    line-height: 4rem;
+    margin-top: 2.7rem;
+  }
+`;
+
+const ExtendedAbout = styled.h1`
+  font-family: nimbus-sans-extended, sans-serif;
+  font-weight: 300;
+  font-size: 1.3rem;
   line-height: 3rem;
   color: #1d403b;
   margin-bottom: 1rem;
+  padding-left: 1rem;
   @media screen and (min-width: 960px) {
     font-size: 2rem;
     line-height: 4rem;
@@ -95,6 +111,7 @@ const DropdownButton = styled.p`
   font-size: 0.9rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  padding-left: 1rem;
   @media screen and (min-width: 960px) {
     font-size: 1.5rem;
   }

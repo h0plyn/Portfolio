@@ -95,6 +95,7 @@ const AllProjects = styled.div`
 const Description = styled.p`
   font-size: 0.7rem;
   margin-bottom: 1.7rem;
+  padding-left: 1rem;
   @media screen and (min-width: 960px) {
     font-size: 1.3rem;
     font-weight: 300;
@@ -106,6 +107,7 @@ const QueryFlex = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 85%;
   @media screen and (min-width: 960px) {
     display: flex;
     flex-direction: column;
