@@ -9,8 +9,9 @@ export default function Projects(props) {
         {projects.map((project) => {
           return (
             <ProjectContainer key={project.name} id={project.id}>
+              {' '}
               <ProjectImage imageUrl={project.imageUrl} aspect={project.aspect}>
-                <a href={project.projectUrl}></a>
+                <a href={project.projectUrl} />
               </ProjectImage>
               <QueryFlex>
                 <Title>{project.name}</Title>
@@ -52,7 +53,7 @@ const ProjectContainer = styled.div`
   @media screen and (min-width: 960px) {
     flex-direction: ${(props) => (props.id % 2 === 0 ? 'row' : 'row-reverse')};
     justify-content: center;
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
   }
 `;
 
@@ -71,7 +72,7 @@ const ProjectImage = styled.div`
   a {
     position: absolute;
     width: 90%;
-    height: ${(props) => (props.aspect === 'vertical' ? '50%' : '30%')};
+    height: ${(props) => (props.aspect === 'vertical' ? '75vw' : '50vw')};
   }
 
   @media screen and (min-width: 960px) {
