@@ -50,6 +50,7 @@ const ProjectContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 90%;
+  margin-top: 1.5rem;
   @media screen and (min-width: 960px) {
     flex-direction: ${(props) => (props.id % 2 === 0 ? 'row' : 'row-reverse')};
     justify-content: center;
