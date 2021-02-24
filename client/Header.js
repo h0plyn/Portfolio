@@ -43,11 +43,15 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   /* border: 2px solid red; */
+  padding-top: 10rem;
 `;
 
 const ContentBox = styled.div`
   width: 90%;
   /* border: 2px solid hotpink; */
+  @media screen and (min-width: 960px) {
+    width: 70%;
+  }
 `;
 
 const MainText = styled.h1`
@@ -59,8 +63,8 @@ const MainText = styled.h1`
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {
-    font-size: 2rem;
-    line-height: 4rem;
+    font-size: 2.2rem;
+    line-height: 3rem;
     margin-top: 2.7rem;
   }
 `;
@@ -74,9 +78,8 @@ const SubText = styled.h1`
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {
-    font-size: 2rem;
-    line-height: 4rem;
-    margin-top: 2.7rem;
+    font-size: 2.2rem;
+    line-height: 3rem;
   }
 `;
 
@@ -89,7 +92,7 @@ const ExtendedAbout = styled.h1`
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 4rem;
     margin-top: 2.7rem;
   }
@@ -112,7 +115,9 @@ const DropdownButton = styled.p`
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-left: 1rem;
+  cursor: pointer;
   @media screen and (min-width: 960px) {
-    font-size: 1.5rem;
+    margin-top: 1.8rem;
+    font-size: 1rem;
   }
 `;

@@ -30,6 +30,24 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: #ecdccb;
+  border: 2px solid red;
+`;
+
+const ProjectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 90%;
+  margin-top: 1.5rem;
+  border: 2px solid hotpink;
+
+  @media screen and (min-width: 960px) {
+    flex-direction: ${(p) => (p.id % 2 === 0 ? 'row' : 'row-reverse')};
+    justify-content: center;
+    width: 70%;
+  }
 `;
 
 const Title = styled.h1`
@@ -43,28 +61,13 @@ const Title = styled.h1`
   }
 `;
 
-const ProjectContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 90%;
-  margin-top: 1.5rem;
-  @media screen and (min-width: 960px) {
-    flex-direction: ${(props) => (props.id % 2 === 0 ? 'row' : 'row-reverse')};
-    justify-content: center;
-    /* margin-bottom: 5rem; */
-  }
-`;
-
 const ProjectImage = styled.div`
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${(p) => p.imageUrl});
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  height: ${(props) => (props.aspect === 'vertical' ? '75vw' : '50vw')};
+  height: ${(p) => (p.aspect === 'vertical' ? '75vw' : '50vw')};
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
@@ -73,7 +76,7 @@ const ProjectImage = styled.div`
   a {
     position: absolute;
     width: 90%;
-    height: ${(props) => (props.aspect === 'vertical' ? '75vw' : '50vw')};
+    height: ${(p) => (p.aspect === 'vertical' ? '75vw' : '50vw')};
   }
 
   @media screen and (min-width: 960px) {
@@ -81,7 +84,7 @@ const ProjectImage = styled.div`
     flex-direction: row;
     flex: 2;
     width: 35%;
-    height: ${(props) => (props.aspect === 'vertical' ? '30vw' : '25vw')};
+    height: ${(p) => (p.aspect === 'vertical' ? '30vw' : '25vw')};
     margin: 0;
     padding: 0;
   }
@@ -110,6 +113,7 @@ const QueryFlex = styled.div`
   justify-content: center;
   align-items: center;
   width: 85%;
+  border: 2px solid brown;
   @media screen and (min-width: 960px) {
     display: flex;
     flex-direction: column;

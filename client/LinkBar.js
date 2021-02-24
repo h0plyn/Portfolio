@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -18,8 +18,6 @@ const Icon = styled.a`
 `;
 
 export default function LinkBar() {
-  const [info, setInfo] = useState(false);
-
   return (
     <Container>
       <Icon
