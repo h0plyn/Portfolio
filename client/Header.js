@@ -53,7 +53,7 @@ const ContentBox = styled.div`
 const MainText = styled.h1`
   font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 3rem;
   color: #1d403b;
   margin-bottom: 1rem;
@@ -68,8 +68,8 @@ const MainText = styled.h1`
 const SubText = styled.h1`
   font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 2.2rem;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
   color: #1d403b;
   margin-bottom: 1rem;
   padding-left: 1rem;
@@ -83,8 +83,8 @@ const SubText = styled.h1`
 const ExtendedAbout = styled.h1`
   font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
   color: #1d403b;
   margin-bottom: 1rem;
   padding-left: 1rem;

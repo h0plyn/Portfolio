@@ -8,7 +8,7 @@ export default function Projects(props) {
       <AllProjects>
         {projects.map((project) => {
           return (
-            <ProjectContainer key={project.name}>
+            <ProjectContainer key={project.name} id={project.id}>
               <ProjectImage imageUrl={project.imageUrl} aspect={project.aspect}>
                 <a href={project.projectUrl}></a>
               </ProjectImage>
@@ -50,7 +50,7 @@ const ProjectContainer = styled.div`
   height: 100%;
   width: 90%;
   @media screen and (min-width: 960px) {
-    flex-direction: row;
+    flex-direction: ${(props) => (props.id % 2 === 0 ? 'row' : 'row-reverse')};
     justify-content: center;
     margin-bottom: 5rem;
   }
