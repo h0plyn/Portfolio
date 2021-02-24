@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +22,9 @@ const Icon = styled.a`
 export default function LinkBar() {
   return (
     <Container>
+      <a href="https://github.com/h0plyn">
+        <FontAwesomeIcon icon={faCoffee} />
+      </a>
       <Icon
         className="icon fab fa-github-square fa-2x"
         href="https://github.com/h0plyn"
