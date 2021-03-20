@@ -8,12 +8,18 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #ecdccb;
-    color: #1d403b;
+    background-color: #004643;
+    color: #fffffe;
     font-family: Nimbus Mono, monospace;
     font-weight: bold;
     scroll-behavior: smooth;
     font-size: 16px;
+  }
+
+  .icon {
+    color: #fffffe;
+    text-decoration: none;
+    padding: 0.25rem;
   }
 
   .custom-shape-divider-top-1612623275 {
@@ -33,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 .custom-shape-divider-top-1612623275 .shape-fill {
-    fill: #1D403B;
+    fill: #abd1c6;
 }
 
 /** For tablet devices **/

@@ -35,7 +35,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ecdccb;
+  background-color: #004643;
   /* border: 2px solid red; */
   padding-bottom: 6.5rem;
   @media screen and (min-width: 960px) {
@@ -65,7 +65,7 @@ const ProjectContainer = styled.div`
 const Title = styled.h1`
   font-family: nimbus-sans-extended, sans-serif;
   font-weight: 400;
-  color: #1d403b;
+  color: #fffffe;
   font-size: 1.2rem;
   margin-bottom: 1.1rem;
   @media screen and (min-width: 960px) {

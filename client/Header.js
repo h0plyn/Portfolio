@@ -6,12 +6,12 @@ export default function Header(props) {
   return (
     <Container>
       <ContentBox>
-        <MainText>Hi, I'm Ricky Rhodes.</MainText>
+        <MainText>Hey, I'm Ricky Rhodes.</MainText>
         <SubText>
           A Fullstack Software Engineer and former creative professional.
         </SubText>
         {readMore && (
-          <div>
+          <div style={{ transition: '0.2s' }}>
             <ExtendedAbout>
               Currently focusing on Fullstack JavaScript using React, Express,
               Node, and Postgres.{' '}
@@ -61,7 +61,7 @@ const MainText = styled.h1`
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 3rem;
-  color: #1d403b;
+  color: #fffffe;
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {
@@ -76,7 +76,7 @@ const SubText = styled.h1`
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 1.8rem;
-  color: #1d403b;
+  color: #fffffe;
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {
@@ -90,7 +90,7 @@ const ExtendedAbout = styled.h1`
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 1.8rem;
-  color: #1d403b;
+  color: #abd1c6;
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {

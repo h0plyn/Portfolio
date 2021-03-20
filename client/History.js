@@ -27,9 +27,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ecdccb;
   width: 100%;
-  background-color: #1d403b;
+  background-color: #abd1c6;
   padding: 2rem;
   @media screen and (min-width: 960px) {
     padding: 10rem 14rem;
@@ -41,7 +40,7 @@ const Experience = styled.h1`
   font-weight: 300;
   font-size: 1.7rem;
   line-height: 2.48rem;
-  color: #ecdccb;
+  color: #001e1d;
   @media screen and (min-width: 960px) {
     font-size: 2.5rem;
     margin-bottom: 5rem;
@@ -53,7 +52,7 @@ const HistoryContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 1rem;
-  border-top: 1px solid #ecdccb;
+  border-top: 1px solid #001e1d;
   padding-top: 1rem;
   width: 100%;
   @media screen and (min-width: 960px) {
@@ -64,7 +63,7 @@ const HistoryContainer = styled.div`
 `;
 
 const ExpHeader = styled.div`
-  color: #ecdccb;
+  color: #004643;
   display: flex;
   width: 100%;
   /* justify-content: flex-start; */
@@ -79,7 +78,7 @@ const ExpHeader = styled.div`
 
 const Title = styled.h1`
   font-family: nimbus-sans-extended, sans-serif;
-  color: #ecdccb;
+  color: #004643;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -90,7 +89,7 @@ const Title = styled.h1`
 `;
 
 const DescriptionMobile = styled.p`
-  color: #ecdccb;
+  color: #004643;
   font-size: 0.8rem;
   font-weight: 200;
 
@@ -103,7 +102,7 @@ const Description = styled.p`
   display: none;
   @media screen and (min-width: 960px) {
     display: flex;
-    color: #ecdccb;
+    color: #004643;
     font-size: 0.8rem;
     font-weight: 200;
     font-size: 1.2rem;
