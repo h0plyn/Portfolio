@@ -9,7 +9,7 @@ export default function History(props) {
       <Experience>Previous</Experience>
       {history.map((exp) => {
         return (
-          <HistoryContainer key={exp.title}>
+          <HistoryContainer key={exp.id}>
             <ExpHeader>
               <Title>{exp.title}</Title>
               <Year>{exp.year}</Year>
