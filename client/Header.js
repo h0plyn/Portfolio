@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 
 export default function Header(props) {
   const [readMore, setReadMore] = useState(false);
@@ -10,27 +11,41 @@ export default function Header(props) {
         <SubText>
           A Fullstack Software Engineer and former creative professional.
         </SubText>
-        {readMore && (
-          <div style={{ transition: '0.2s' }}>
-            <ExtendedAbout>
-              Currently focusing on Fullstack JavaScript using React, Express,
-              Node, and Postgres.{' '}
-            </ExtendedAbout>
-            <ExtendedAbout>
-              Also, dabbling in React Native, Python, Solidity, and Firebase.
-            </ExtendedAbout>
-            <ExtendedAbout>
-              I was raised in a small farm town outside of Cleveland, OH.
-            </ExtendedAbout>
-            <ExtendedAbout>
-              When not reading documentation, you can find me fly fishing or
-              walking my giant Newfoundland dog.
-            </ExtendedAbout>
-          </div>
-        )}
-        <div onClick={() => setReadMore(!readMore)}>
-          <DropdownButton>[read {readMore ? 'less]' : 'more]'} </DropdownButton>
-        </div>
+        <AnimateSharedLayout>
+          <AnimatePresence>
+            {readMore && (
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0.3 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{
+                  default: { duration: 0.1 },
+                }}
+              >
+                <ExtendedAbout>
+                  Currently focusing on Fullstack JavaScript using React,
+                  Express, Node, and Postgres.{' '}
+                </ExtendedAbout>
+                <ExtendedAbout>
+                  Also, dabbling in React Native, Python, Solidity, and
+                  Firebase.
+                </ExtendedAbout>
+                <ExtendedAbout>
+                  I was raised in a small farm town outside of Cleveland, OH.
+                </ExtendedAbout>
+                <ExtendedAbout>
+                  When not reading documentation, you can find me fly fishing or
+                  walking my giant Newfoundland dog.
+                </ExtendedAbout>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <motion.div layout onClick={() => setReadMore(!readMore)}>
+            <DropdownButton>
+              [read {readMore ? 'less]' : 'more]'}{' '}
+            </DropdownButton>
+          </motion.div>
+        </AnimateSharedLayout>
       </ContentBox>
     </Container>
   );
