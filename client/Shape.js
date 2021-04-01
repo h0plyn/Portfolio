@@ -1,19 +1,47 @@
-import React from 'react'
+import React from 'react';
 
 export default function Shape() {
   return (
-    <div className="custom-shape-divider-top-1612623275">
+    // <div className="custom-shape-divider-top-1612623275">
+    //   <svg
+    //     data-name="Layer 1"
+    //     xmlns="http://www.w3.org/2000/svg"
+    //     viewBox="0 0 1200 120"
+    //     preserveAspectRatio="none"
+    //   >
+    //     <path
+    //       d="M1200 0L0 0 598.97 114.72 1200 0z"
+    //       className="shape-fill"
+    //     ></path>
+    //   </svg>
+    // </div>
+    <div className="blob">
       <svg
-        data-name="Layer 1"
+        viewBox="0 0 500 500"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
+        // xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="100%"
+        id="blobSvg"
       >
+        <defs>
+          <pattern
+            id="pattern"
+            x="0"
+            y="0"
+            width="100"
+            height="20"
+            patternUnits="userSpaceOnUse"
+            fill="#d1d8e0"
+          >
+            <path d="M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z"></path>
+          </pattern>
+        </defs>
         <path
-          d="M1200 0L0 0 598.97 114.72 1200 0z"
-          className="shape-fill"
+          id="blob"
+          d="M473.5,297.5Q448,345,426.5,395Q405,445,353.5,461.5Q302,478,250,477.5Q198,477,149,457.5Q100,438,69,395Q38,352,44,301Q50,250,37.5,196Q25,142,74.5,117.5Q124,93,163.5,68.5Q203,44,249,49.5Q295,55,341.5,66Q388,77,412.5,118.5Q437,160,468,205Q499,250,473.5,297.5Z"
+          fill="url(#pattern)"
         ></path>
       </svg>
     </div>
-  )
+  );
 }

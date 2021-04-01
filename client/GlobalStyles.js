@@ -16,6 +16,18 @@ body {
     font-size: 16px;
 }
 
+.blob {
+    position: absolute;
+    width: 120rem;
+    overflow: hidden;
+    left: 50%;
+    top: -50%;
+    height: 120rem;
+    opacity: 0.1;
+    z-index: -1;
+    color: #abd1c6;
+}
+
 a {
     color: #e8e4e6;
     text-decoration: none;
