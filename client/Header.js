@@ -5,16 +5,17 @@ import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 export default function Header(props) {
   const [readMore, setReadMore] = useState(false);
   return (
-    <Container>
-      <ContentBox>
-        <MainText>Hey, I'm Ricky Rhodes.</MainText>
-        <SubText>
-          A Fullstack Software Engineer and former creative professional.
-        </SubText>
-        <AnimateSharedLayout>
+    <AnimateSharedLayout>
+      <Container>
+        <ContentBox>
+          <MainText>Hey, I'm Ricky Rhodes.</MainText>
+          <SubText>
+            A Fullstack Software Engineer and former creative professional.
+          </SubText>
           <AnimatePresence>
             {readMore && (
               <motion.div
+                layout
                 initial={{ scale: 0.8, opacity: 0.3 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
@@ -40,14 +41,19 @@ export default function Header(props) {
               </motion.div>
             )}
           </AnimatePresence>
-          <motion.div layout onClick={() => setReadMore(!readMore)}>
+          <motion.div
+            layout
+            onClick={() => setReadMore(!readMore)}
+            origin={{ x: 0 }}
+            transition={{ type: 'spring', stiffness: 63, duration: 0.1 }}
+          >
             <DropdownButton>
               [read {readMore ? 'less]' : 'more]'}{' '}
             </DropdownButton>
           </motion.div>
-        </AnimateSharedLayout>
-      </ContentBox>
-    </Container>
+        </ContentBox>
+      </Container>
+    </AnimateSharedLayout>
   );
 }
 

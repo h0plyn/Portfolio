@@ -59,6 +59,8 @@ const HistoryContainer = styled.div`
     padding-top: 4rem;
     padding-bottom: 4rem;
     margin-bottom: 0rem;
+    max-width: 1920px;
+    margin: auto;
   }
 `;
 

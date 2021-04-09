@@ -8,11 +8,7 @@ This portfolio website will hold completed projects, links to social media and o
 
 ## To Do:
 
-1. Fix margins and alignment
-2. Add more information to previous experience
-3. Add smooth drop down
-4. Edit 'Read more...' copy
-5. Style 'Read more...' section
+1. Add content for each project
 
 ### Tech
 

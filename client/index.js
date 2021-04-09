@@ -9,17 +9,27 @@ import Shape from './Shape';
 import History from './History';
 import LinkBar from './LinkBar';
 import Footer from './Footer';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
 function App() {
   return (
     <Router>
       <GlobalStyles />
-      <Shape />
-      <LinkBar />
-      <Header />
-      <Projects data={currentProjects} />
-      <History data={currentProjects} />
-      <Footer />
+      <motion.div
+        layout
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.6,
+        }}
+      >
+        <Shape />
+        <LinkBar />
+        <Header />
+        <Projects data={currentProjects} />
+        <History data={currentProjects} />
+        <Footer />
+      </motion.div>
     </Router>
   );
 }

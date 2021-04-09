@@ -1,37 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
 export default function Projects(props) {
   const { projects } = props.data;
   return (
-    <Container>
-      <AllProjects>
-        {projects.map(
-          ({ name, id, projectUrl, imageUrl, aspect, description }) => {
-            return (
-              <ProjectContainer key={name} id={id}>
-                {' '}
-                <a href={projectUrl}>
-                  <Image
-                    className="project-image"
-                    src={imageUrl}
-                    aspect={aspect}
-                  />
-                </a>
-                <QueryFlex>
-                  <Title>{name}</Title>
-                  <Description>{description}</Description>
-                </QueryFlex>
-              </ProjectContainer>
-            );
-          }
-        )}
-      </AllProjects>
-    </Container>
+    <AnimateSharedLayout>
+      <Container
+        layout
+        origin={{ x: 0 }}
+        initial={{ x: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 63, duration: 1 }}
+      >
+        <AllProjects>
+          {projects.map(
+            ({ name, id, projectUrl, imageUrl, aspect, description }) => {
+              return (
+                <ProjectContainer key={name} id={id}>
+                  {' '}
+                  <a href={projectUrl}>
+                    <Image
+                      className="project-image"
+                      src={imageUrl}
+                      aspect={aspect}
+                    />
+                  </a>
+                  <QueryFlex>
+                    <Title>{name}</Title>
+                    <Description>{description}</Description>
+                  </QueryFlex>
+                </ProjectContainer>
+              );
+            }
+          )}
+        </AllProjects>
+      </Container>
+    </AnimateSharedLayout>
   );
 }
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,6 +49,7 @@ const Container = styled.div`
   padding-bottom: 6.5rem;
   @media screen and (min-width: 960px) {
     padding-top: 7rem;
+    margin: auto;
   }
 `;
 
