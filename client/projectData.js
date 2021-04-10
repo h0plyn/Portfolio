@@ -1,8 +1,6 @@
 import covid_dashboard_mock from '../public/assets/covid_dashboard_mock.png';
 import stooply_mock from '../public/assets/stooply_mock.png';
 import wallpaper_mock from '../public/assets/wallpaper_mock.png';
-import dsld from '../public/assets/dsld.png';
-import dsld_alt from '../public/assets/dsld_alt.png';
 import dsld_v3 from '../public/assets/dsld_v3.png';
 
 export const projects = [

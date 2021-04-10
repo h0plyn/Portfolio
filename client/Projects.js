@@ -44,8 +44,6 @@ const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: #004643; */
-  /* border: 2px solid red; */
   padding-bottom: 6.5rem;
   @media screen and (min-width: 960px) {
     padding-top: 7rem;
@@ -61,7 +59,6 @@ const ProjectContainer = styled.div`
   height: 100%;
   width: 90%;
   margin-top: 1.5rem;
-  /* border: 2px solid hotpink; */
 
   @media screen and (min-width: 960px) {
     flex-direction: ${(p) => (p.id % 2 === 0 ? 'row-reverse' : 'row')};
@@ -90,7 +87,6 @@ const Image = styled.img`
   padding-right: 0;
   margin-top: 0;
   margin-bottom: 1rem;
-  /* border: 2px solid black; */
 
   @media screen and (min-width: 960px) {
     flex-direction: row;
@@ -126,7 +122,7 @@ const QueryFlex = styled.div`
   justify-content: center;
   align-items: center;
   width: 85%;
-  /* border: 2px solid brown; */
+
   @media screen and (min-width: 960px) {
     display: flex;
     justify-content: flex-start;

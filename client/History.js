@@ -68,8 +68,6 @@ const ExpHeader = styled.div`
   color: #004643;
   display: flex;
   width: 100%;
-  /* justify-content: flex-start; */
-  /* align-items: center; */
   margin-bottom: 0.5rem;
 
   @media screen and (min-width: 960px) {

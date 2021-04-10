@@ -63,7 +63,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* border: 2px solid red; */
   @media screen and (min-width: 960px) {
     padding-top: 10rem;
   }
@@ -71,7 +70,7 @@ const Container = styled.div`
 
 const ContentBox = styled.div`
   width: 90%;
-  /* border: 2px solid hotpink; */
+
   @media screen and (min-width: 960px) {
     width: 70%;
   }
