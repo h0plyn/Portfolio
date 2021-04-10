@@ -34,7 +34,8 @@ body {
 a {
     color: #e8e4e6;
     text-decoration: none;
-    transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1) 0s}
+    transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1) 0s
+}
 
 a:hover {
     transform : scale(1.05);
@@ -49,8 +50,8 @@ a:hover {
 /** For tablet devices **/
 @media (min-width: 768px) and (max-width: 1023px) {
     .blob {
-        width: 40rem;
-        margin-top: 5rem;
+        width: 80%;
+        margin-top: 15rem;
     }
 
     .icon {
@@ -61,7 +62,7 @@ a:hover {
 /** For mobile devices **/
 @media (max-width: 767px) {
     .blob {
-        width: 22rem;
+        width: 90%;
         margin-top: 15rem;
         margin-right: 1rem;
     }

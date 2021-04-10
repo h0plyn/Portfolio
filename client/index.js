@@ -9,7 +9,7 @@ import Shape from './Shape';
 import History from './History';
 import LinkBar from './LinkBar';
 import Footer from './Footer';
-import { motion, AnimateSharedLayout } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 function App() {
   return (

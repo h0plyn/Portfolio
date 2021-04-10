@@ -47,7 +47,7 @@ export default function Header(props) {
             origin={{ x: 0 }}
             transition={{ type: 'spring', stiffness: 63, duration: 0.1 }}
           >
-            <DropdownButton>
+            <DropdownButton className="read-more">
               [read {readMore ? 'less]' : 'more]'}{' '}
             </DropdownButton>
           </motion.div>
@@ -139,6 +139,12 @@ const DropdownButton = styled.p`
   margin-bottom: 1rem;
   padding-left: 1rem;
   cursor: pointer;
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+  }
+
   @media screen and (min-width: 960px) {
     margin-top: 1.8rem;
     font-size: 1rem;
