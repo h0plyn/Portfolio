@@ -6,7 +6,7 @@ import History from './History';
 import LinkBar from './LinkBar';
 import Footer from './Footer';
 
-export default function Main() {
+export default function App() {
   return (
     <>
       <Shape />
