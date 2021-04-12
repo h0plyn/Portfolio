@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { motion, AnimateSharedLayout } from 'framer-motion';
+import ProjectContext from '../context/ProjectContext';
 
 export default function Projects(props) {
-  const { projects } = props.data;
+  const projects = useContext(ProjectContext) || [];
+
   return (
     <AnimateSharedLayout>
       <Container
