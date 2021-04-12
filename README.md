@@ -15,5 +15,6 @@ This portfolio website will hold completed projects, links to social media and o
 - React
 - React Hooks
 - Styled-Components
+- Framer Motion
 - Parcel
 - Netlify

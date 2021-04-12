@@ -21,7 +21,6 @@ const FooterContainer = styled.div`
   flex-direction: column;
   width: 100%;
   background-color: #abd1c6;
-  /* padding-top: 3rem; */
   padding-bottom: 3rem;
   padding-left: 2rem;
   @media screen and (min-width: 960px) {
