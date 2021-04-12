@@ -11,7 +11,6 @@ This portfolio website will hold completed projects, links to social media and o
 1. Add content for each project
 2. Refactor with TypeScript
 
-
 ### Tech
 
 - React

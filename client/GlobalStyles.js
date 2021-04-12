@@ -22,7 +22,8 @@ body {
     width: 120rem;
     top: -10rem;
     z-index: -1;
-    opacity: 0.1;
+    opacity: 1.0;
+    color: #003330;
 }
 
 .overflow {
