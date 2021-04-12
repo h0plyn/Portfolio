@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import HistoryContext from '../context/HistoryContext';
 import styled from 'styled-components';
 
 export default function History(props) {
-  const { history } = props.data;
+  const history = useContext(HistoryContext);
 
   return (
     <Container>
