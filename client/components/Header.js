@@ -81,7 +81,7 @@ const MainText = styled.h1`
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 3rem;
-  color: #fffffe;
+  color: var(--text);
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {
@@ -96,7 +96,7 @@ const SubText = styled.h1`
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 1.8rem;
-  color: #fffffe;
+  color: var(--text);
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {
@@ -110,7 +110,7 @@ const ExtendedAbout = styled.h1`
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 1.8rem;
-  color: #abd1c6;
+  color: var(--light-green);
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {

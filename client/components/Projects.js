@@ -74,7 +74,7 @@ const ProjectContainer = styled.div`
 const Title = styled.h1`
   font-family: nimbus-sans-extended, sans-serif;
   font-weight: 400;
-  color: #fffffe;
+  color: var(--text);
   font-size: 1.2rem;
   margin-bottom: 1.1rem;
   @media screen and (min-width: 960px) {

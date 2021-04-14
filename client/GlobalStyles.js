@@ -1,6 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+:root {
+    --background-color: #004643;
+    --text: #fffffe;
+    --light-green: #abd1c6;
+    --light-green-secondary: #001e1d;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +15,8 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    background-color: #004643;
-    color: #fffffe;
+    background-color: var(--background-color);
+    color: var(--text);
     font-family: Nimbus Mono, monospace;
     font-weight: bold;
     scroll-behavior: smooth;
