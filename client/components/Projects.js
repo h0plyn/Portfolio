@@ -26,12 +26,8 @@ export default function Projects(props) {
             return (
               <ProjectContainer key={name} id={id}>
                 {' '}
-                <a href={projectUrl}>
-                  <Image
-                    className="project-image"
-                    src={imageUrl}
-                    aspect={aspect}
-                  />
+                <a className="project-image" href={projectUrl}>
+                  <Image src={imageUrl} aspect={aspect} />
                 </a>
                 <QueryFlex>
                   <Title>{name}</Title>

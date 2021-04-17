@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
     --text: #fffffe;
     --light-green: #abd1c6;
     --light-green-secondary: #001e1d;
+    --button: #f9bc60;
 }
 
 * {
@@ -47,6 +48,10 @@ a {
 
 a:hover {
     transform : scale(1.05);
+}
+
+a.project-image:hover {
+    transform : scale(1.02);
 }
 
 .icon {
