@@ -60,6 +60,11 @@ a.project-image:hover {
     font-size: 4rem;
 }
 
+.read-more {
+    position: relative;
+    top: 3px;
+}
+
 /** For tablet devices **/
 @media (min-width: 768px) and (max-width: 1023px) {
     .blob {
