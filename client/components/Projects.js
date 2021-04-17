@@ -7,38 +7,36 @@ export default function Projects(props) {
   const projects = useContext(ProjectContext) || [];
 
   return (
-    <AnimateSharedLayout>
-      <Container
-        layout
-        origin={{ x: 0 }}
-        initial={{ x: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 63, duration: 1 }}
-      >
-        <AllProjects>
-          {projects.map(
-            ({ name, id, projectUrl, imageUrl, aspect, description }) => {
-              return (
-                <ProjectContainer key={name} id={id}>
-                  {' '}
-                  <a href={projectUrl}>
-                    <Image
-                      className="project-image"
-                      src={imageUrl}
-                      aspect={aspect}
-                    />
-                  </a>
-                  <QueryFlex>
-                    <Title>{name}</Title>
-                    <Description>{description}</Description>
-                  </QueryFlex>
-                </ProjectContainer>
-              );
-            }
-          )}
-        </AllProjects>
-      </Container>
-    </AnimateSharedLayout>
+    <Container
+      layout
+      origin={{ x: 0 }}
+      initial={{ x: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 63, duration: 1 }}
+    >
+      <AllProjects>
+        {projects.map(
+          ({ name, id, projectUrl, imageUrl, aspect, description }) => {
+            return (
+              <ProjectContainer key={name} id={id}>
+                {' '}
+                <a href={projectUrl}>
+                  <Image
+                    className="project-image"
+                    src={imageUrl}
+                    aspect={aspect}
+                  />
+                </a>
+                <QueryFlex>
+                  <Title>{name}</Title>
+                  <Description>{description}</Description>
+                </QueryFlex>
+              </ProjectContainer>
+            );
+          }
+        )}
+      </AllProjects>
+    </Container>
   );
 }
 

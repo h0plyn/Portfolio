@@ -5,55 +5,52 @@ import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 export default function Header(props) {
   const [readMore, setReadMore] = useState(false);
   return (
-    <AnimateSharedLayout>
-      <Container>
-        <ContentBox>
-          <MainText>Hey, I'm Ricky Rhodes.</MainText>
-          <SubText>
-            A Fullstack Software Engineer and former creative professional.
-          </SubText>
-          <AnimatePresence>
-            {readMore && (
-              <motion.div
-                layout
-                initial={{ scale: 0.8, opacity: 0.3 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{
-                  default: { duration: 0.1 },
-                }}
-              >
-                <ExtendedAbout>
-                  Currently focusing on Fullstack JavaScript using React,
-                  Express, Node, and Postgres.{' '}
-                </ExtendedAbout>
-                <ExtendedAbout>
-                  Also, dabbling in React Native, Python, Solidity, and
-                  Firebase.
-                </ExtendedAbout>
-                <ExtendedAbout>
-                  I was raised in a small farm town outside of Cleveland, OH.
-                </ExtendedAbout>
-                <ExtendedAbout>
-                  When not reading documentation, you can find me fly fishing or
-                  walking my giant Newfoundland dog.
-                </ExtendedAbout>
-              </motion.div>
-            )}
-          </AnimatePresence>
-          <motion.div
-            layout
-            onClick={() => setReadMore(!readMore)}
-            origin={{ x: 0 }}
-            transition={{ type: 'spring', stiffness: 63, duration: 0.1 }}
-          >
-            <DropdownButton className="read-more">
-              [read {readMore ? 'less]' : 'more]'}{' '}
-            </DropdownButton>
-          </motion.div>
-        </ContentBox>
-      </Container>
-    </AnimateSharedLayout>
+    <Container>
+      <ContentBox>
+        <MainText>Hey, I'm Ricky Rhodes.</MainText>
+        <SubText>
+          A Fullstack Software Engineer and former creative professional.
+        </SubText>
+        <AnimatePresence>
+          {readMore && (
+            <motion.div
+              layout
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -100, opacity: 0 }}
+              transition={{
+                default: { duration: 0.1, delay: 0.2 },
+              }}
+            >
+              <ExtendedAbout>
+                Currently focusing on Fullstack JavaScript using React, Express,
+                Node, and Postgres.{' '}
+              </ExtendedAbout>
+              <ExtendedAbout>
+                Also, dabbling in React Native, Python, Solidity, and Firebase.
+              </ExtendedAbout>
+              <ExtendedAbout>
+                I was raised in a small farm town outside of Cleveland, OH.
+              </ExtendedAbout>
+              <ExtendedAbout>
+                When not reading documentation, you can find me fly fishing or
+                walking my giant Newfoundland dog.
+              </ExtendedAbout>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <motion.div
+          layout
+          onClick={() => setReadMore(!readMore)}
+          origin={{ x: 0 }}
+          transition={{ type: 'tween', duration: 0.1 }}
+        >
+          <DropdownButton className="read-more">
+            [read {readMore ? 'less]' : 'more]'}{' '}
+          </DropdownButton>
+        </motion.div>
+      </ContentBox>
+    </Container>
   );
 }
 
