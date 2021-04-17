@@ -3,6 +3,7 @@ import covid_dashboard_mock from '../../public/assets/covid_dashboard_mock.png';
 import stooply_mock from '../../public/assets/stooply_mock.png';
 import wallpaper_mock from '../../public/assets/wallpaper_mock.png';
 import dsld_v3 from '../../public/assets/dsld_v3.png';
+import EventLoop from '../../public/assets/eventloop.png';
 
 export const projects = [
   {
@@ -23,6 +24,14 @@ export const projects = [
   },
   {
     id: 3,
+    name: 'Covid Dashboard',
+    imageUrl: covid_dashboard_mock,
+    description: 'Covid-19 Data Visualization',
+    projectUrl: 'https://github.com/garretthaas/covid-dashboard',
+    aspect: 'horizontal',
+  },
+  {
+    id: 4,
     name: 'Wallpaper',
     imageUrl: wallpaper_mock,
     description: 'A marketplace for digital images',
@@ -30,11 +39,12 @@ export const projects = [
     aspect: 'horizontal',
   },
   {
-    id: 4,
-    name: 'Covid Dashboard',
-    imageUrl: covid_dashboard_mock,
-    description: 'Covid-19 Data Visualization',
-    projectUrl: 'https://github.com/garretthaas/covid-dashboard',
+    id: 5,
+    name: "JavaScript's Event Loop",
+    imageUrl: EventLoop,
+    description: 'A blog post explaining the Event Loop',
+    projectUrl:
+      'https://rickyrhodes.medium.com/single-threaded-but-asynchronous-the-javascript-event-loop-77e2ec86b04e',
     aspect: 'horizontal',
   },
 ];

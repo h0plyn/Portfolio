@@ -19,7 +19,9 @@ export default function Header(props) {
           transition={{ type: 'tween', duration: 0.2 }}
         >
           <DropdownButton className="read-more">
-            Read {readMore ? 'less' : 'more'}
+            <p style={{ margin: 0, padding: 0, lineHeight: 1.3 }}>
+              Read {readMore ? 'less' : 'more'}
+            </p>
           </DropdownButton>
         </motion.div>
       </ContentBox>
