@@ -12,7 +12,13 @@ export default function Projects(props) {
       origin={{ x: 0 }}
       initial={{ x: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ type: 'spring', stiffness: 63, duration: 1 }}
+      transition={{
+        type: 'spring',
+        stiffness: 80,
+        bounce: 0.95,
+        duration: 0.2,
+        damping: 12,
+      }}
     >
       <AllProjects>
         {projects.map(
