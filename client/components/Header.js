@@ -19,7 +19,9 @@ export default function Header(props) {
           transition={{ type: 'tween', duration: 0.2 }}
         >
           <DropdownButton>
-            <p className="read-more">Read {readMore ? 'less' : 'more'}</p>
+            <ButtonText className="read-more">
+              Read {readMore ? 'less' : 'more'}
+            </ButtonText>
           </DropdownButton>
         </motion.div>
       </ContentBox>
@@ -92,7 +94,10 @@ const DropdownButton = styled.div`
 
   &:hover {
     transform: translateY(-0.2rem);
-    box-shadow: 3px 8px 34px -10px rgba(255, 255, 255, 0.1);
+    box-shadow: 3px 8px 34px -10px rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    background-color: var(--button);
+    transition: background-color 0.5s ease-in-out;
   }
 
   @media screen and (min-width: 960px) {
@@ -102,4 +107,10 @@ const DropdownButton = styled.div`
     width: 10rem;
     border-radius: 10px;
   }
+`;
+
+const ButtonText = styled.p`
+  position: relative;
+  top: 3px;
+  color: var(--button-text);
 `;

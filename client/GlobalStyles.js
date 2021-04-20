@@ -7,6 +7,8 @@ const GlobalStyles = createGlobalStyle`
     --light-green: #abd1c6;
     --light-green-secondary: #001e1d;
     --button: #f9bc60;
+    --button-text: #001e1d;
+    --icon: #e8e4e6;
 }
 
 * {
@@ -58,11 +60,6 @@ a.project-image:hover {
     text-decoration: none;
     padding: 0.4rem;
     font-size: 4rem;
-}
-
-.read-more {
-    position: relative;
-    top: 3px;
 }
 
 /** For tablet devices **/
