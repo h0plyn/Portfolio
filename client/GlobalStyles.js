@@ -18,7 +18,8 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    background-color: var(--background-color);
+    background: radial-gradient(#003331
+, #004643);
     color: var(--text);
     font-family: Nimbus Mono, monospace;
     font-weight: bold;
