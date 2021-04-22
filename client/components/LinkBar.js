@@ -7,22 +7,32 @@ import {
   faTwitterSquare,
   faInstagramSquare,
 } from '@fortawesome/free-brands-svg-icons';
+import { faFile, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function LinkBar() {
   return (
     <Container>
+      <a href="mailto:devrickyrhodes@gmail.com?subject=Hey there!">
+        <FontAwesomeIcon icon={faEnvelopeSquare} className="icon" />
+      </a>
       <a href="https://github.com/h0plyn">
         <FontAwesomeIcon icon={faGithubSquare} className="icon" />
       </a>
-      <a href="https://www.linkedin.com/in/rickyrhodes/">
-        <FontAwesomeIcon icon={faLinkedin} size="3x" className="icon" />
+      <a href="https://www.linkedin.com/in/rickyrhodes/" target="_blank">
+        <FontAwesomeIcon icon={faLinkedin} className="icon" />
       </a>
 
-      <a href="https://twitter.com/h0plyn">
-        <FontAwesomeIcon icon={faTwitterSquare} size="3x" className="icon" />
+      <a href="https://twitter.com/h0plyn" target="_blank">
+        <FontAwesomeIcon icon={faTwitterSquare} className="icon" />
       </a>
-      <a href="https://www.instagram.com/rickyrhodes/">
-        <FontAwesomeIcon icon={faInstagramSquare} size="3x" className="icon" />
+      <a href="https://www.instagram.com/rickyrhodes/" target="_blank">
+        <FontAwesomeIcon icon={faInstagramSquare} className="icon" />
+      </a>
+      <a
+        href="https://standardresume.co/r/azQnZ76rvx8XG6MLTzvny"
+        target="_blank"
+      >
+        <FontAwesomeIcon icon={faFile} className="icon resume" />
       </a>
     </Container>
   );
@@ -32,11 +42,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-bottom: 1.5rem;
+  align-items: center;
   width: 100%;
-  height: 10rem;
+  margin-bottom: 10rem;
   padding-top: 1.5rem;
   padding-left: 1rem;
+  gap: 0.8rem;
 
   @media only screen and (min-width: 960px) {
     position: sticky;

@@ -59,8 +59,15 @@ a.project-image:hover {
 
 .icon {
     text-decoration: none;
-    padding: 0.4rem;
-    font-size: 4rem;
+    font-size: 3rem;
+
+    &:hover {
+    box-shadow: 3px 8px 34px -10px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.resume {
+    font-size: 2.5rem;
 }
 
 /** For tablet devices **/
@@ -71,7 +78,11 @@ a.project-image:hover {
     }
 
     .icon {
-        font-size: 3.7rem;
+        font-size: 2.7rem;
+    }
+
+    .resume {
+        font-size: 2.2rem;
     }
 }
 
@@ -84,7 +95,11 @@ a.project-image:hover {
     }
 
     .icon {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+
+    .resume {
+        font-size: 1.75rem;
     }
 }
 `;
