@@ -35,6 +35,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 5rem;
+
   @media screen and (min-width: 960px) {
     padding-top: 10rem;
   }

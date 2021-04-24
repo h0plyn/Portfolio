@@ -44,7 +44,7 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   padding-top: 1.5rem;
   padding-left: 1rem;
   gap: 0.8rem;
@@ -53,5 +53,6 @@ const Container = styled.div`
     position: sticky;
     padding-top: 2rem;
     padding-left: 2rem;
+    margin-bottom: 10rem;
   }
 `;
