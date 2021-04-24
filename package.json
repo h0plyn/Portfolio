@@ -1,8 +1,8 @@
 {
   "name": "Portfolio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Personal Portfolio of Ricky Rhodes",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "start": "rm -rf .cache dist && npx parcel public/index.html",
     "build": "rm -rf .cache dist && parcel build public/index.html"
@@ -19,17 +19,13 @@
   },
   "homepage": "https://github.com/h0plyn/Portfolio#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
-    "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "framer-motion": "^4.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-is": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "reset.css": "^2.0.2",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
