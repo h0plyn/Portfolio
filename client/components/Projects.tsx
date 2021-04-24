@@ -4,12 +4,22 @@ import { motion } from 'framer-motion';
 import ProjectContext from '../context/ProjectContext';
 
 interface Project {
-  name: string;
-  id: number;
-  projectUrl: string;
-  imageUrl: string;
-  aspect: string;
-  description: string;
+  readonly name: string;
+  readonly projectId: number;
+  readonly projectUrl: string;
+  readonly imageUrl: string;
+  readonly aspect: string;
+  readonly description: string;
+}
+
+interface IProjectContainer {
+  readonly key: string;
+  readonly projectId: number;
+}
+
+interface IImage {
+  readonly src: string;
+  readonly aspect: string;
 }
 
 export default function Projects() {
@@ -32,14 +42,14 @@ export default function Projects() {
         {projects.map(
           ({
             name,
-            id,
+            projectId,
             projectUrl,
             imageUrl,
             aspect,
             description,
           }: Project) => {
             return (
-              <ProjectContainer key={name} id={id}>
+              <ProjectContainer key={name} projectId={projectId}>
                 {' '}
                 <a className="project-image" href={projectUrl}>
                   <Image src={imageUrl} aspect={aspect} />
@@ -68,7 +78,7 @@ const Container = styled(motion.div)`
   }
 `;
 
-const ProjectContainer = styled.div`
+const ProjectContainer = styled.div<IProjectContainer>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,8 +88,7 @@ const ProjectContainer = styled.div`
   margin-top: 1.5rem;
 
   @media screen and (min-width: 960px) {
-    flex-direction: ${(p: number): string =>
-      p.id % 2 === 0 ? 'row-reverse' : 'row'};
+    flex-direction: ${(p) => (p.projectId % 2 === 0 ? 'row-reverse' : 'row')};
     justify-content: center;
     width: 73%;
     margin-top: 5rem;
@@ -99,8 +108,8 @@ const Title = styled.h1`
   }
 `;
 
-const Image = styled.img`
-  height: ${(p: string): string => (p.aspect === 'vertical' ? '70vw' : '50vw')};
+const Image = styled.img<IImage>`
+  height: ${(p) => (p.aspect === 'vertical' ? '70vw' : '50vw')};
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
@@ -109,8 +118,7 @@ const Image = styled.img`
   @media screen and (min-width: 960px) {
     flex-direction: row;
     flex: 1;
-    height: ${(p: string): string =>
-      p.aspect === 'vertical' ? '28vw' : '20vw'};
+    height: ${(p) => (p.aspect === 'vertical' ? '28vw' : '20vw')};
     margin: 0;
     padding: 0;
   }

@@ -7,7 +7,7 @@ import EventLoop from '../../public/assets/eventloop.png';
 
 export const projects = [
   {
-    id: 1,
+    projectId: 1,
     name: 'Stooply',
     imageUrl: stooply_mock,
     description: 'Building hyper-local community through the gift economy',
@@ -15,7 +15,7 @@ export const projects = [
     aspect: 'vertical',
   },
   {
-    id: 2,
+    projectId: 2,
     name: 'DSLD',
     imageUrl: dsld_v3,
     description: 'Workout form checking companion',
@@ -23,7 +23,7 @@ export const projects = [
     aspect: 'horizontal',
   },
   {
-    id: 3,
+    projectId: 3,
     name: 'Covid Dashboard',
     imageUrl: covid_dashboard_mock,
     description: 'Covid-19 Data Visualization',
@@ -31,7 +31,7 @@ export const projects = [
     aspect: 'horizontal',
   },
   {
-    id: 4,
+    projectId: 4,
     name: 'Wallpaper',
     imageUrl: wallpaper_mock,
     description: 'A marketplace for digital images',
@@ -39,7 +39,7 @@ export const projects = [
     aspect: 'horizontal',
   },
   {
-    id: 5,
+    projectId: 5,
     name: "JavaScript's Event Loop",
     imageUrl: EventLoop,
     description: 'A blog post explaining the Event Loop',
