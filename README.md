@@ -9,10 +9,12 @@ This portfolio website will hold completed projects, links to social media and o
 ## To Do:
 
 1. Add content for each project
-2. Refactor with TypeScript
+2. Animate Routes
+3. Add Theming
 
 ### Tech
 
+- TypeScript
 - React
 - React Hooks
 - Context API
