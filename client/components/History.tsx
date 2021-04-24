@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import HistoryContext from '../context/HistoryContext';
 import styled from 'styled-components';
 
-export default function History(props) {
+export default function History() {
   const history = useContext(HistoryContext);
 
   return (

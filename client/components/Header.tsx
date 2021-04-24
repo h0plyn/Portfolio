@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExtendedAbout } from './ExtendedAbout';
 
-export default function Header(props) {
+export default function Header() {
   const [readMore, setReadMore] = useState(false);
   return (
     <Container>

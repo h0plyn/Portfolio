@@ -3,13 +3,21 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import ProjectContext from '../context/ProjectContext';
 
-export default function Projects(props) {
+interface Project {
+  name: string;
+  id: number;
+  projectUrl: string;
+  imageUrl: string;
+  aspect: string;
+  description: string;
+}
+
+export default function Projects() {
   const projects = useContext(ProjectContext) || [];
 
   return (
     <Container
       layout
-      origin={{ x: 0 }}
       initial={{ x: 0 }}
       animate={{ opacity: 1 }}
       transition={{
@@ -22,7 +30,14 @@ export default function Projects(props) {
     >
       <AllProjects>
         {projects.map(
-          ({ name, id, projectUrl, imageUrl, aspect, description }) => {
+          ({
+            name,
+            id,
+            projectUrl,
+            imageUrl,
+            aspect,
+            description,
+          }: Project) => {
             return (
               <ProjectContainer key={name} id={id}>
                 {' '}
@@ -63,7 +78,8 @@ const ProjectContainer = styled.div`
   margin-top: 1.5rem;
 
   @media screen and (min-width: 960px) {
-    flex-direction: ${(p) => (p.id % 2 === 0 ? 'row-reverse' : 'row')};
+    flex-direction: ${(p: number): string =>
+      p.id % 2 === 0 ? 'row-reverse' : 'row'};
     justify-content: center;
     width: 73%;
     margin-top: 5rem;
@@ -84,7 +100,7 @@ const Title = styled.h1`
 `;
 
 const Image = styled.img`
-  height: ${(p) => (p.aspect === 'vertical' ? '75vw' : '50vw')};
+  height: ${(p: string): string => (p.aspect === 'vertical' ? '70vw' : '50vw')};
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
@@ -93,7 +109,8 @@ const Image = styled.img`
   @media screen and (min-width: 960px) {
     flex-direction: row;
     flex: 1;
-    height: ${(p) => (p.aspect === 'vertical' ? '28vw' : '20vw')};
+    height: ${(p: string): string =>
+      p.aspect === 'vertical' ? '28vw' : '20vw'};
     margin: 0;
     padding: 0;
   }

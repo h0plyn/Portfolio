@@ -33,6 +33,9 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "@types/react": "^17.0.3",
+    "@types/styled-components": "^5.1.9",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.2.4"
   }
 }
