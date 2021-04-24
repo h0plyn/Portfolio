@@ -67,7 +67,21 @@ a.project-image:hover {
 }
 
 .resume {
+    text-decoration: none;
     font-size: 2.5rem;
+
+    &:hover {
+    box-shadow: 3px 8px 34px -10px rgba(255, 255, 255, 1);
+    }
+}
+
+// Icon margin for Safari to account for unsupported Flexbox gap
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        .icon {
+            margin-right: .7rem;
+        }
+    }
 }
 
 /** For tablet devices **/

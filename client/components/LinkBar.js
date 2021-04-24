@@ -32,7 +32,7 @@ export default function LinkBar() {
         href="https://standardresume.co/r/azQnZ76rvx8XG6MLTzvny"
         target="_blank"
       >
-        <FontAwesomeIcon icon={faFile} className="icon resume" />
+        <FontAwesomeIcon icon={faFile} className="resume" />
       </a>
     </Container>
   );
