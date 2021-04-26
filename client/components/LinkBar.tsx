@@ -53,6 +53,6 @@ const Container = styled.div`
     position: sticky;
     padding-top: 2rem;
     padding-left: 2rem;
-    margin-bottom: 10rem;
+    margin-bottom: 12rem;
   }
 `;
