@@ -12,12 +12,12 @@ interface Project {
   readonly description: string;
 }
 
-interface IProjectContainer {
+interface ProjectContainer {
   readonly key: string;
   readonly projectId: number;
 }
 
-interface IImage {
+interface Image {
   readonly src: string;
   readonly aspect: string;
 }
@@ -78,7 +78,7 @@ const Container = styled(motion.div)`
   }
 `;
 
-const ProjectContainer = styled.div<IProjectContainer>`
+const ProjectContainer = styled.div<ProjectContainer>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +108,7 @@ const Title = styled.h1`
   }
 `;
 
-const Image = styled.img<IImage>`
+const Image = styled.img<Image>`
   height: ${(p) => (p.aspect === 'vertical' ? '70vw' : '50vw')};
   padding-left: 0;
   padding-right: 0;
