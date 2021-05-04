@@ -60,7 +60,6 @@ a.project-image:hover {
 .icon {
     text-decoration: none;
     font-size: 3rem;
-    color: var(--light-green);
 
     &:hover {
     box-shadow: 3px 8px 34px -10px rgba(255, 255, 255, 0.3);
@@ -70,7 +69,6 @@ a.project-image:hover {
 .resume {
     text-decoration: none;
     font-size: 2.5rem;
-    color: var(--light-green);
 
     &:hover {
     box-shadow: 3px 8px 34px -10px rgba(255, 255, 255, 1);

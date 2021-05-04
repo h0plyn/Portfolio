@@ -38,7 +38,7 @@ const Container = styled.div`
   margin-bottom: 5rem;
 
   @media screen and (min-width: 960px) {
-    /* padding-top: 5rem; */
+    padding-top: 15rem;
   }
 `;
 
