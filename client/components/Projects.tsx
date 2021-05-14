@@ -1,16 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import useData from '../hooks/data';
-
-interface Project {
-  readonly name: string;
-  readonly projectId: number;
-  readonly projectUrl: string;
-  readonly imageUrl: string;
-  readonly aspect: string;
-  readonly description: string;
-}
+import useData, { Project } from '../hooks/data';
 
 interface ProjectContainer {
   readonly key: string;

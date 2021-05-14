@@ -5,8 +5,24 @@ import wallpaper_mock from '../../public/assets/wallpaper_mock.png';
 import dsld_v3 from '../../public/assets/dsld_v3.png';
 import EventLoop from '../../public/assets/eventloop.png';
 
+export interface History {
+  readonly id: number;
+  readonly title: string;
+  readonly year: string;
+  readonly description: string;
+}
+
+export interface Project {
+  readonly name: string;
+  readonly projectId: number;
+  readonly projectUrl: string;
+  readonly imageUrl: string;
+  readonly aspect: string;
+  readonly description: string;
+}
+
 const useData = () => {
-  const [history] = useState([
+  const [history] = useState<History[]>([
     {
       id: 1,
       title: 'Fullstack Academy',
@@ -32,7 +48,7 @@ const useData = () => {
       description: 'B.S. in Visual Communication, Photography',
     },
   ]);
-  const [projects] = useState([
+  const [projects] = useState<Project[]>([
     {
       projectId: 1,
       name: 'Stooply',

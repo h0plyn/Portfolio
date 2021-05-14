@@ -1,22 +1,21 @@
 import React from 'react';
-import useData from '../hooks/data';
+import useData, { History } from '../hooks/data';
 import styled from 'styled-components';
-
 export default function History() {
   const { history } = useData();
 
   return (
     <Container>
       <Experience>Previous</Experience>
-      {history.map((exp) => {
+      {history.map(({ id, title, year, description }: History) => {
         return (
-          <HistoryContainer key={exp.id}>
+          <HistoryContainer key={id}>
             <ExpHeader>
-              <Title>{exp.title}</Title>
-              <Year>{exp.year}</Year>
-              <Description>{exp.description}</Description>
+              <Title>{title}</Title>
+              <Year>{year}</Year>
+              <Description>{description}</Description>
             </ExpHeader>
-            <DescriptionMobile>{exp.description}</DescriptionMobile>
+            <DescriptionMobile>{description}</DescriptionMobile>
           </HistoryContainer>
         );
       })}
