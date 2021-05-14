@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import ProjectContext from '../context/ProjectContext';
+// import ProjectContext from '../context/ProjectContext';
+import useData from '../hooks/data';
 
 interface Project {
   readonly name: string;
@@ -23,7 +24,8 @@ interface Image {
 }
 
 export default function Projects() {
-  const projects = useContext(ProjectContext) || [];
+  // const projects = useContext(ProjectContext) || [];
+  const { projects } = useData();
 
   return (
     <Container

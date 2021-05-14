@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
-import HistoryContext from '../context/HistoryContext';
+import React from 'react';
+// import HistoryContext from '../context/HistoryContext';
+import useData from '../hooks/data';
 import styled from 'styled-components';
 
 export default function History() {
-  const history = useContext(HistoryContext);
+  // const history = useContext(HistoryContext);
+  const { history } = useData();
 
   return (
     <Container>
