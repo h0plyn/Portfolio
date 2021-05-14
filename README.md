@@ -17,7 +17,6 @@ This portfolio website will hold completed projects, links to social media and o
 - TypeScript
 - React
 - React Hooks
-- Context API
 - Styled-Components
 - Framer Motion
 - Parcel
