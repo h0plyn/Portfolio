@@ -1,8 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { graphql, useStaticQuery } from 'gatsby';
+
+const ExtendedText = styled.h1`
+  /* font-family: nimbus-sans-extended, sans-serif; */
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  color: var(--light-green);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  @media screen and (min-width: 960px) {
+    font-size: 2.2rem;
+    line-height: 4rem;
+    margin-top: 2.7rem;
+  }
+`;
 
 export const ExtendedAbout = () => {
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allDatoCmsExtendedtexts {
+  //       id
+  //       copy
+  //     }
+  //   }
+  // `);
+  // console.log(data);
   return (
     <motion.div
       layout
@@ -30,18 +55,3 @@ export const ExtendedAbout = () => {
     </motion.div>
   );
 };
-
-const ExtendedText = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  line-height: 1.8rem;
-  color: var(--light-green);
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  @media screen and (min-width: 960px) {
-    font-size: 2.2rem;
-    line-height: 4rem;
-    margin-top: 2.7rem;
-  }
-`;

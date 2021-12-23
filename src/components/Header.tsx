@@ -2,16 +2,28 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExtendedAbout } from './ExtendedAbout';
+import { graphql, useStaticQuery } from 'gatsby';
 
 export default function Header() {
+  const { allDatoCmsHeader } = useStaticQuery(graphql`
+    query {
+      allDatoCmsHeader {
+        edges {
+          node {
+            hero
+            subhead
+          }
+        }
+      }
+    }
+  `);
+  const { hero, subhead } = allDatoCmsHeader.edges[0].node;
   const [readMore, setReadMore] = useState(false);
   return (
     <Container>
       <ContentBox>
-        <MainText>Hey, I'm Ricky Rhodes.</MainText>
-        <SubText>
-          A Fullstack Software Engineer and former creative professional.
-        </SubText>
+        <MainText>{hero}</MainText>
+        <SubText>{subhead}</SubText>
         <AnimatePresence>{readMore && <ExtendedAbout />}</AnimatePresence>
         <motion.div
           layout
@@ -51,7 +63,7 @@ const ContentBox = styled.div`
 `;
 
 const MainText = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
+  /* font-family: nimbus-sans-extended, sans-serif; */
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 3rem;
@@ -66,7 +78,7 @@ const MainText = styled.h1`
 `;
 
 const SubText = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
+  /* font-family: nimbus-sans-extended, sans-serif; */
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 1.8rem;

@@ -1,20 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import useData, { Project } from '../hooks/data';
+import { graphql, useStaticQuery } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
 interface ProjectContainer {
-  readonly key: string;
-  readonly projectId: number;
+  key: string;
+  projectId: number;
 }
 
 interface Image {
-  readonly src: string;
-  readonly aspect: string;
+  src: string;
+  aspect: string;
 }
 
 export default function Projects() {
-  const { projects } = useData();
+  const { allDatoCmsProject } = useStaticQuery(graphql`
+    {
+      allDatoCmsProject {
+        edges {
+          node {
+            description
+            id
+            title
+            image {
+              url
+            }
+            projectid
+            projecturl
+          }
+        }
+      }
+    }
+  `);
+
+  console.log('Projects data', allDatoCmsProject);
 
   return (
     <Container
@@ -30,29 +50,28 @@ export default function Projects() {
       }}
     >
       <AllProjects>
-        {projects.map(
-          ({
-            name,
-            projectId,
-            projectUrl,
-            imageUrl,
-            aspect,
-            description,
-          }: Project) => {
-            return (
-              <ProjectContainer key={name} projectId={projectId}>
-                {' '}
-                <a className="project-image" href={projectUrl}>
-                  <Image src={imageUrl} aspect={aspect} />
-                </a>
-                <QueryFlex>
-                  <Title>{name}</Title>
-                  <Description>{description}</Description>
-                </QueryFlex>
-              </ProjectContainer>
-            );
-          }
-        )}
+        {allDatoCmsProject.edges.map((project, idx: Project) => {
+          console.log(project.node.image.url, idx);
+          return (
+            <ProjectContainer
+              key={project.node.title}
+              projectId={project.node.projectId}
+            >
+              {' '}
+              <a className="project-image" href={project.node.projectUrl}>
+                {/* TODO: FIX IMAGE */}
+                <StaticImage
+                  src={project.node.image.url}
+                  alt={project.node.title}
+                />
+              </a>
+              <QueryFlex>
+                <Title>{project.node.name}</Title>
+                <Description>{project.node.description}</Description>
+              </QueryFlex>
+            </ProjectContainer>
+          );
+        })}
       </AllProjects>
     </Container>
   );
@@ -88,7 +107,7 @@ const ProjectContainer = styled.div<ProjectContainer>`
 `;
 
 const Title = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
+  /* font-family: nimbus-sans-extended, sans-serif; */
   font-weight: 400;
   color: var(--text);
   font-size: 1.2rem;
@@ -99,7 +118,7 @@ const Title = styled.h1`
   }
 `;
 
-const Image = styled.img<Image>`
+const Image = styled(StaticImage)<Image>`
   height: ${(p) => (p.aspect === 'vertical' ? '70vw' : '50vw')};
   padding-left: 0;
   padding-right: 0;
@@ -123,7 +142,7 @@ const AllProjects = styled.div`
 `;
 
 const Description = styled.p`
-  font-family: 'Nimbus Mono', monospace;
+  /* font-family: 'Nimbus Mono', monospace; */
   font-weight: bold;
   font-size: 0.7rem;
   margin-bottom: 1.7rem;

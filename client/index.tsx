@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import GlobalStyles from './GlobalStyles';
-import App from './components';
+import GlobalStyles from '../src/GlobalStyles';
+import App from '../src/components';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 
 function Root() {
