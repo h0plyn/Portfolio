@@ -21,7 +21,7 @@ body {
     background: radial-gradient(#003331
 , #004643);
     color: var(--text);
-    /* font-family: Nimbus Mono, monospace; */
+    font-family: Nimbus Mono, monospace;
     font-weight: bold;
     scroll-behavior: smooth;
     font-size: 16px;

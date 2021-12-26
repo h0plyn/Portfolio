@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+
 export default function History() {
   const { allDatoCmsExperience } = useStaticQuery(graphql`
     query {
@@ -15,17 +16,15 @@ export default function History() {
       }
     }
   `);
-  console.log('history data', allDatoCmsExperience);
 
   return (
     <Container>
       <Experience>Previous</Experience>
       {/* TODO: FIX TYPE */}
       {allDatoCmsExperience.edges.map((experience: any) => {
-        const { id, job, year, role } = experience.node;
-        console.log(experience);
+        const { job, year, role } = experience.node;
         return (
-          <HistoryContainer key={id}>
+          <HistoryContainer key={role}>
             <ExpHeader>
               <Title>{job}</Title>
               <Year>{year}</Year>
@@ -52,7 +51,7 @@ const Container = styled.div`
 `;
 
 const Experience = styled.h1`
-  /* font-family: nimbus-sans-extended, sans-serif; */
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
   font-size: 1.7rem;
   line-height: 2.48rem;

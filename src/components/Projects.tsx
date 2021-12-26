@@ -2,39 +2,40 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 interface ProjectContainer {
   key: string;
-  projectId: number;
+  projectid: number;
 }
 
 interface Image {
-  src: string;
+  image: IGatsbyImageData;
   aspect: string;
 }
 
 export default function Projects() {
-  const { allDatoCmsProject } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     {
-      allDatoCmsProject {
+      allDatoCmsProject(sort: { fields: projectid, order: ASC }) {
         edges {
           node {
-            description
-            id
-            title
             image {
-              url
+              gatsbyImageData(layout: CONSTRAINED)
+              title
             }
+            description
             projectid
             projecturl
+            title
+            aspect
           }
         }
       }
     }
   `);
 
-  console.log('Projects data', allDatoCmsProject);
+  console.log('Projects data', data);
 
   return (
     <Container
@@ -50,23 +51,25 @@ export default function Projects() {
       }}
     >
       <AllProjects>
-        {allDatoCmsProject.edges.map((project, idx: Project) => {
-          console.log(project.node.image.url, idx);
+        {data.allDatoCmsProject.edges.map((project: any, idx: number) => {
+          const image = getImage(project.node.image);
+          console.log(project);
           return (
             <ProjectContainer
               key={project.node.title}
-              projectId={project.node.projectId}
+              projectid={project.node.projectid}
             >
               {' '}
               <a className="project-image" href={project.node.projectUrl}>
-                {/* TODO: FIX IMAGE */}
-                <StaticImage
-                  src={project.node.image.url}
+                <Image
+                  image={image as IGatsbyImageData}
                   alt={project.node.title}
+                  aspect={project.aspect}
+                  objectFit="contain"
                 />
               </a>
               <QueryFlex>
-                <Title>{project.node.name}</Title>
+                <Title>{project.node.title}</Title>
                 <Description>{project.node.description}</Description>
               </QueryFlex>
             </ProjectContainer>
@@ -98,7 +101,7 @@ const ProjectContainer = styled.div<ProjectContainer>`
   margin-top: 1.5rem;
 
   @media screen and (min-width: 960px) {
-    flex-direction: ${(p) => (p.projectId % 2 === 0 ? 'row-reverse' : 'row')};
+    flex-direction: ${(p) => (p.projectid % 2 === 0 ? 'row-reverse' : 'row')};
     justify-content: center;
     width: 73%;
     margin-top: 5rem;
@@ -107,7 +110,7 @@ const ProjectContainer = styled.div<ProjectContainer>`
 `;
 
 const Title = styled.h1`
-  /* font-family: nimbus-sans-extended, sans-serif; */
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 400;
   color: var(--text);
   font-size: 1.2rem;
@@ -118,7 +121,7 @@ const Title = styled.h1`
   }
 `;
 
-const Image = styled(StaticImage)<Image>`
+const Image = styled(GatsbyImage)<Image>`
   height: ${(p) => (p.aspect === 'vertical' ? '70vw' : '50vw')};
   padding-left: 0;
   padding-right: 0;
@@ -142,7 +145,7 @@ const AllProjects = styled.div`
 `;
 
 const Description = styled.p`
-  /* font-family: 'Nimbus Mono', monospace; */
+  font-family: 'Nimbus Mono', monospace;
   font-weight: bold;
   font-size: 0.7rem;
   margin-bottom: 1.7rem;

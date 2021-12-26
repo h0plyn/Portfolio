@@ -2,10 +2,19 @@ require('dotenv').config();
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-image`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
     {
       resolve: `gatsby-source-datocms`,
       options: {

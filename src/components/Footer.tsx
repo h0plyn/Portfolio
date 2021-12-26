@@ -14,7 +14,7 @@ const FooterContainer = styled.div`
 `;
 
 const BackToTop = styled.div`
-  /* font-family: nimbus-sans-extended, sans-serif; */
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
   font-size: 1.3rem;
   margin-bottom: 0.7rem;
@@ -26,7 +26,7 @@ const BackToTop = styled.div`
 `;
 
 const Copyright = styled.h4`
-  /* font-family: 'Nimbus Mono'; */
+  font-family: 'Nimbus Mono';
   font-weight: 300;
   font-size: 0.8rem;
   color: var(--background-color);

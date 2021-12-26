@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 
 const ExtendedText = styled.h1`
-  /* font-family: nimbus-sans-extended, sans-serif; */
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 400;
   font-size: 1.1rem;
   line-height: 1.8rem;

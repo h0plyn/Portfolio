@@ -6299,7 +6299,7 @@ gatsby-plugin-react-helmet@^5.4.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-plugin-sharp@^4.0.0-next:
+gatsby-plugin-sharp@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.4.0.tgz#d3d182f1397011aeb969f4300022ff13df81e720"
   integrity sha512-X2Syc6YfOD2O+5A2Lrd/l/HXHIAIjcbRfP38uJPbG0cZg3xRd3T7RaDEcDrFylHvpYZfcqjzumfwPeQuhhxUUQ==
@@ -6446,7 +6446,7 @@ gatsby-source-datocms@^3.0.12:
     semver "^7.3.5"
     unist-util-visit "^2.0.3"
 
-gatsby-source-filesystem@^4.0.0-next:
+gatsby-source-filesystem@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.4.0.tgz#9921ac0600166e4ee0cd561d194c2df89a42e11d"
   integrity sha512-tN+aJdOnBf92V9oHXaGzPB6gL0EhpYH0mh/dfszroy25CtSq07fZu8SynS/B3ClJVi22MkD0imcDVMlPJGSQ3w==
@@ -6483,6 +6483,20 @@ gatsby-telemetry@^3.4.0:
     is-docker "^2.2.1"
     lodash "^4.17.21"
     node-fetch "^2.6.6"
+
+gatsby-transformer-sharp@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-4.4.0.tgz#b71e8041713494de2592ea91e7cc99eb92a9cf0b"
+  integrity sha512-X9sPXrz5OkAgSBnsOwHV6mvU2IzTXHKzOeNBdDgk/wzrzWdSue7yo3xDHX62h51c1Ern51oT4i5Yr6+xu5s/Fw==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    bluebird "^3.7.2"
+    common-tags "^1.8.2"
+    fs-extra "^10.0.0"
+    potrace "^2.1.8"
+    probe-image-size "^6.0.0"
+    semver "^7.3.5"
+    sharp "^0.29.3"
 
 gatsby-worker@^1.4.0:
   version "1.4.0"
