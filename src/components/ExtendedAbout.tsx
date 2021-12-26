@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
+import { motion } from 'framer-motion';
+
+interface ExtendedAboutNode {
+  node: {
+    copy: string;
+  };
+}
 
 const ExtendedText = styled.h1`
   font-family: nimbus-sans-extended, sans-serif;
@@ -19,15 +25,18 @@ const ExtendedText = styled.h1`
 `;
 
 export const ExtendedAbout = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allDatoCmsExtendedtexts {
-  //       id
-  //       copy
-  //     }
-  //   }
-  // `);
-  // console.log(data);
+  const { allDatoCmsExtendedtext } = useStaticQuery(graphql`
+    query {
+      allDatoCmsExtendedtext {
+        edges {
+          node {
+            copy
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <motion.div
       layout
@@ -38,20 +47,9 @@ export const ExtendedAbout = () => {
         default: { duration: 0.1, delay: 0.2 },
       }}
     >
-      <ExtendedText>
-        Currently focusing on Fullstack JavaScript using React, Express, Node,
-        and Postgres.{' '}
-      </ExtendedText>
-      <ExtendedText>
-        Also, dabbling in React Native, Python, Solidity, and Firebase.
-      </ExtendedText>
-      <ExtendedText>
-        I was raised in a small farm town outside of Cleveland, OH.
-      </ExtendedText>
-      <ExtendedText>
-        When not reading documentation, you can find me fly fishing or walking
-        my giant Newfoundland dog.
-      </ExtendedText>
+      {allDatoCmsExtendedtext.edges.map(({ node }: ExtendedAboutNode) => (
+        <ExtendedText>{node.copy}</ExtendedText>
+      ))}
     </motion.div>
   );
 };

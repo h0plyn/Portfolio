@@ -9,6 +9,32 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faFile, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  left: 1.3rem;
+  width: 100%;
+  margin-bottom: 5rem;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  gap: 0.8rem;
+
+  @media only screen and (min-width: 960px) {
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 3%;
+    padding-left: 0;
+    padding-top: 0;
+    margin-bottom: 12rem;
+    z-index: 10;
+  }
+`;
+
 export default function LinkBar() {
   return (
     <Container>
@@ -37,29 +63,3 @@ export default function LinkBar() {
     </Container>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  left: 1.3rem;
-  width: 100%;
-  margin-bottom: 5rem;
-  padding-top: 1.5rem;
-  padding-left: 1rem;
-  gap: 0.8rem;
-
-  @media only screen and (min-width: 960px) {
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 3%;
-    padding-left: 0;
-    padding-top: 0;
-    margin-bottom: 12rem;
-    z-index: 10;
-  }
-`;

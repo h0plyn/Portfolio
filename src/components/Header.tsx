@@ -1,45 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExtendedAbout } from './ExtendedAbout';
-import { graphql, useStaticQuery } from 'gatsby';
-
-export default function Header() {
-  const { allDatoCmsHeader } = useStaticQuery(graphql`
-    query {
-      allDatoCmsHeader {
-        edges {
-          node {
-            hero
-            subhead
-          }
-        }
-      }
-    }
-  `);
-  const { hero, subhead } = allDatoCmsHeader.edges[0].node;
-  const [readMore, setReadMore] = useState(false);
-  return (
-    <Container>
-      <ContentBox>
-        <MainText>{hero}</MainText>
-        <SubText>{subhead}</SubText>
-        <AnimatePresence>{readMore && <ExtendedAbout />}</AnimatePresence>
-        <motion.div
-          layout
-          onClick={() => setReadMore(!readMore)}
-          transition={{ type: 'tween', duration: 0.2 }}
-        >
-          <DropdownButton>
-            <ButtonText className="read-more">
-              Read {readMore ? 'less' : 'more'}
-            </ButtonText>
-          </DropdownButton>
-        </motion.div>
-      </ContentBox>
-    </Container>
-  );
-}
 
 const Container = styled.div`
   display: flex;
@@ -128,3 +91,42 @@ const ButtonText = styled.p`
   top: 3px;
   color: var(--button-text);
 `;
+
+export default function Header() {
+  const { allDatoCmsHeader } = useStaticQuery(graphql`
+    query {
+      allDatoCmsHeader {
+        edges {
+          node {
+            hero
+            subhead
+          }
+        }
+      }
+    }
+  `);
+
+  const { hero, subhead } = allDatoCmsHeader.edges[0].node;
+  const [readMore, setReadMore] = useState(false);
+
+  return (
+    <Container>
+      <ContentBox>
+        <MainText>{hero}</MainText>
+        <SubText>{subhead}</SubText>
+        <AnimatePresence>{readMore && <ExtendedAbout />}</AnimatePresence>
+        <motion.div
+          layout
+          onClick={() => setReadMore(!readMore)}
+          transition={{ type: 'tween', duration: 0.2 }}
+        >
+          <DropdownButton>
+            <ButtonText className="read-more">
+              Read {readMore ? 'less' : 'more'}
+            </ButtonText>
+          </DropdownButton>
+        </motion.div>
+      </ContentBox>
+    </Container>
+  );
+}

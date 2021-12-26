@@ -1,9 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import './styles.css';
-import App from '../components';
 import { AnimateSharedLayout, motion } from 'framer-motion';
 import GlobalStyles from '../GlobalStyles';
+import App from '../components';
 
 const seo = {
   url: 'https://rickyrhodes.dev',

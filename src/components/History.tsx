@@ -1,42 +1,6 @@
-import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-
-export default function History() {
-  const { allDatoCmsExperience } = useStaticQuery(graphql`
-    query {
-      allDatoCmsExperience {
-        edges {
-          node {
-            job
-            year
-            role
-          }
-        }
-      }
-    }
-  `);
-
-  return (
-    <Container>
-      <Experience>Previous</Experience>
-      {/* TODO: FIX TYPE */}
-      {allDatoCmsExperience.edges.map((experience: any) => {
-        const { job, year, role } = experience.node;
-        return (
-          <HistoryContainer key={role}>
-            <ExpHeader>
-              <Title>{job}</Title>
-              <Year>{year}</Year>
-              <Description>{role}</Description>
-            </ExpHeader>
-            <DescriptionMobile>{role}</DescriptionMobile>
-          </HistoryContainer>
-        );
-      })}
-    </Container>
-  );
-}
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Container = styled.div`
   display: flex;
@@ -139,3 +103,46 @@ const Year = styled.div`
     flex: 1;
   }
 `;
+
+interface ExperienceNode {
+  node: {
+    job: string;
+    year: string;
+    role: string;
+  };
+}
+
+export default function History() {
+  const { allDatoCmsExperience } = useStaticQuery(graphql`
+    query {
+      allDatoCmsExperience {
+        edges {
+          node {
+            job
+            year
+            role
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <Container>
+      <Experience>Previous</Experience>
+      {allDatoCmsExperience.edges.map(({ node }: ExperienceNode) => {
+        const { job, year, role } = node;
+        return (
+          <HistoryContainer key={role}>
+            <ExpHeader>
+              <Title>{job}</Title>
+              <Year>{year}</Year>
+              <Description>{role}</Description>
+            </ExpHeader>
+            <DescriptionMobile>{role}</DescriptionMobile>
+          </HistoryContainer>
+        );
+      })}
+    </Container>
+  );
+}
