@@ -127,6 +127,7 @@ export default function Projects() {
             projecturl
             title
             aspect
+            shoulddisplay
           }
         }
       }
