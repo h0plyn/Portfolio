@@ -49,7 +49,7 @@ export default function Footer() {
       }
     }
   `);
-  const {back, copyright} = allDatoCmsFooter.edges[0].node.
+  const {back, copyright} = allDatoCmsFooter.edges[0].node;
 
   return (
     <FooterContainer>
