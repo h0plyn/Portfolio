@@ -9,7 +9,8 @@ const seo = {
   url: 'https://rickyrhodes.dev',
   title: 'Ricky Rhodes | Software Engineer',
   description: 'TypeScript, GraphQL, NodeJS, Gatsby',
-  favicon: '/icon.png',
+  favicon: '',
+  image: "https://dl.dropboxusercontent.com/s/qp7m0pjsrlf3w88/meta.png"
 };
 
 const Home = () => {
@@ -23,6 +24,8 @@ const Home = () => {
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={seo.image} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <GlobalStyles />
       <motion.div
