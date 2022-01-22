@@ -19,7 +19,6 @@ const Home = () => {
       <Helmet title={seo.title}>
         <meta name="description" content={seo.description} />
         <link rel="icon" type="image/png" sizes="32x32" href={seo.favicon} />
-
         <meta property="og:url" content={seo.url} />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />

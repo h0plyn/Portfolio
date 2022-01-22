@@ -10,10 +10,10 @@ interface ExtendedAboutNode {
 }
 
 const ExtendedText = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
+  font-family: 'nimbus-sans-extended', sans-serif;
   font-weight: 400;
   font-size: 1.1rem;
-  line-height: 1.8rem;
+  line-height: 1.5rem;
   color: var(--light-green);
   margin-bottom: 1rem;
   padding-left: 1rem;
@@ -48,7 +48,7 @@ export const ExtendedAbout = () => {
       }}
     >
       {allDatoCmsExtendedtext.edges.map(({ node }: ExtendedAboutNode) => (
-        <ExtendedText>{node.copy}</ExtendedText>
+        <ExtendedText key={node.copy}>{node.copy}</ExtendedText>
       ))}
     </motion.div>
   );

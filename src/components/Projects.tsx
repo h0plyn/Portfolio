@@ -6,11 +6,11 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 interface ProjectNode {
   node: {
-    image: IGatsbyImageData;
+    image: { gatsbyImageData: IGatsbyImageData };
     title: string;
     description: string;
     projectid: number;
-    projectUrl: string;
+    projecturl: string;
     aspect: string;
   };
 }
@@ -45,7 +45,7 @@ const ProjectContainer = styled.div<{ projectid: number }>`
 `;
 
 const Title = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
+  font-family: 'nimbus-sans-extended', sans-serif;
   font-weight: 400;
   color: var(--text);
   font-size: 1.2rem;
@@ -105,7 +105,7 @@ const QueryFlex = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex: 1;
+    flex: 1 1 1;
     width: 100%;
     height: 100%;
     padding-left: 5rem;
@@ -148,22 +148,22 @@ export default function Projects() {
     >
       <AllProjects>
         {data.allDatoCmsProject.edges.map(({ node }: ProjectNode) => {
-          const { image, title, description, projectid, projectUrl, aspect } =
+          const { image, title, description, projectid, projecturl, aspect } =
             node;
-
+          console.log(node);
           return (
-            <ProjectContainer key={node.title} projectid={node.projectid}>
-              <a className="project-image" href={node.projectUrl}>
+            <ProjectContainer key={title} projectid={projectid}>
+              <a className="project-image" href={projecturl}>
                 <Image
-                  image={image}
-                  alt={node.title}
+                  image={image.gatsbyImageData}
+                  alt={title}
                   aspect={aspect}
                   objectFit="contain"
                 />
               </a>
               <QueryFlex>
-                <Title>{node.title}</Title>
-                <Description>{node.description}</Description>
+                <Title>{title}</Title>
+                <Description>{description}</Description>
               </QueryFlex>
             </ProjectContainer>
           );
