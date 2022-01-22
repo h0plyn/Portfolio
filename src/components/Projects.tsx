@@ -150,7 +150,6 @@ export default function Projects() {
         {data.allDatoCmsProject.edges.map(({ node }: ProjectNode) => {
           const { image, title, description, projectid, projecturl, aspect } =
             node;
-          console.log(node);
           return (
             <ProjectContainer key={title} projectid={projectid}>
               <a className="project-image" href={projecturl}>

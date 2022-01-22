@@ -49,6 +49,7 @@ export default function Footer() {
       }
     }
   `);
+  const {back, copyright} = allDatoCmsFooter.edges[0].node.
 
   return (
     <FooterContainer>
@@ -57,9 +58,9 @@ export default function Footer() {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
       >
-        {allDatoCmsFooter.edges[0].node.back}
+        {back}
       </BackToTop>
-      <Copyright>{allDatoCmsFooter.edges[0].node.copyright}</Copyright>
+      <Copyright>{copyright}</Copyright>
     </FooterContainer>
   );
 }

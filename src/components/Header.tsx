@@ -91,20 +91,19 @@ const ButtonText = styled.p`
 `;
 
 export default function Header() {
-  const { allDatoCmsHeader } = useStaticQuery(graphql`
+  const { datoCmsHeader } = useStaticQuery(graphql`
     query {
-      allDatoCmsHeader {
-        edges {
-          node {
-            hero
-            subhead
-          }
-        }
+      datoCmsHeader {
+        hero
+        less
+        more
+        subhead
+        read
       }
     }
   `);
 
-  const { hero, subhead } = allDatoCmsHeader.edges[0].node;
+  const { hero, subhead, read, more, less } = datoCmsHeader;
   const [readMore, setReadMore] = useState(false);
 
   return (
@@ -120,7 +119,7 @@ export default function Header() {
         >
           <DropdownButton>
             <ButtonText className="read-more">
-              Read {readMore ? 'less' : 'more'}
+              {read}&nbsp;{readMore ? less : more}
             </ButtonText>
           </DropdownButton>
         </motion.div>

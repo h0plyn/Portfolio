@@ -6,18 +6,12 @@
 
 This portfolio website will hold completed projects, links to social media and other information. It will be updated as new skills are learned and projects are completed.
 
-## To Do:
-
-1. Add content for each project
-2. Animate Routes
-3. Add Theming
-
 ### Tech
 
+- Gatsby
+- DatoCMS
 - TypeScript
 - React
-- React Hooks
 - Styled-Components
 - Framer Motion
-- Parcel
 - Netlify
