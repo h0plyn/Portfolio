@@ -45,7 +45,7 @@ const ProjectContainer = styled.div<{ projectid: number }>`
 `;
 
 const Title = styled.h1`
-  font-family: 'nimbus-sans-extended', sans-serif;
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 400;
   color: var(--text);
   font-size: 1.2rem;
@@ -83,7 +83,7 @@ const AllProjects = styled.div`
 `;
 
 const Description = styled.p`
-  font-family: 'Nimbus Mono', monospace;
+  font-family: input-mono, monospace;
   font-weight: bold;
   font-size: 0.7rem;
   margin-bottom: 1.7rem;

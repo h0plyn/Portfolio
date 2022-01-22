@@ -7,13 +7,19 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean && rm -rf node_modules",
-    "tsc": "tsc "
+    "tsc": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/h0plyn/Portfolio.git"
   },
-  "keywords": [],
+  "keywords": [
+    "gastby",
+    "datocms",
+    "styled-components",
+    "framer-motion",
+    "react"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
@@ -26,7 +32,6 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@types/react-dom": "^17.0.11",
     "babel-plugin-styled-components": "^2.0.2",
     "dotenv": "^10.0.0",
     "framer-motion": "^4.0.0",
@@ -50,6 +55,7 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
     "@types/react-helmet": "^6.1.4",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.21",

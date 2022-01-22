@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const Experience = styled.h1`
-  font-family: 'nimbus-sans-extended', sans-serif;
+  font-family: nimbus-sans-extended, sans-serif;
   font-weight: 300;
   font-size: 1.7rem;
   line-height: 2.48rem;
@@ -56,7 +56,7 @@ const ExpHeader = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: 'nimbus-sans-extended', sans-serif;
+  font-family: nimbus-sans-extended, sans-serif;
   color: var(--background-color);
   font-size: 1rem;
   font-weight: 400;
