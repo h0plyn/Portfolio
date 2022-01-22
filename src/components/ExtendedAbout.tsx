@@ -27,10 +27,11 @@ const ExtendedText = styled.h1`
 export const ExtendedAbout = () => {
   const { allDatoCmsExtendedtext } = useStaticQuery(graphql`
     query {
-      allDatoCmsExtendedtext {
+      allDatoCmsExtendedtext(sort: { fields: order, order: ASC}) {
         edges {
           node {
             copy
+            order
           }
         }
       }
