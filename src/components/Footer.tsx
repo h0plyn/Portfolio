@@ -1,20 +1,6 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-
-export default function Footer() {
-  return (
-    <FooterContainer>
-      <BackToTop
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-      >
-        Back to Top
-      </BackToTop>
-      <Copyright>2021 Ricky Rhodes</Copyright>
-    </FooterContainer>
-  );
-}
 
 const FooterContainer = styled.div`
   display: flex;
@@ -41,11 +27,40 @@ const BackToTop = styled.div`
 `;
 
 const Copyright = styled.h4`
-  font-family: 'Nimbus Mono';
+  font-family: input-mono;
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--background-color);
   @media screen and (min-width: 960px) {
     font-size: 1.1rem;
   }
 `;
+
+export default function Footer() {
+  const { allDatoCmsFooter } = useStaticQuery(graphql`
+    query {
+      allDatoCmsFooter {
+        edges {
+          node {
+            back
+            copyright
+          }
+        }
+      }
+    }
+  `);
+  const {back, copyright} = allDatoCmsFooter.edges[0].node;
+
+  return (
+    <FooterContainer>
+      <BackToTop
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      >
+        {back}
+      </BackToTop>
+      <Copyright>{copyright}</Copyright>
+    </FooterContainer>
+  );
+}
