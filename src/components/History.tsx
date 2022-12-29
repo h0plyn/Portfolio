@@ -115,7 +115,7 @@ interface ExperienceNode {
 export default function History() {
   const { allDatoCmsExperience } = useStaticQuery(graphql`
     query {
-      allDatoCmsExperience(sort: { fields: order, order: ASC }) {
+      allDatoCmsExperience(sort: { order: ASC }) {
         edges {
           node {
             order

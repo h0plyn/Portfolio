@@ -16,17 +16,6 @@ const seo = {
 const Home = () => {
   return (
     <div className="home">
-      <title>{seo.title}</title>
-      <Helmet title={seo.title}>
-        <meta name="description" content={seo.description} />
-        <link rel="icon" type="image/png" sizes="32x32" href={seo.favicon} />
-        <meta property="og:url" content={seo.url} />
-        <meta property="og:title" content={seo.title} />
-        <meta property="og:description" content={seo.description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={seo.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
       <GlobalStyles />
       <motion.div
         layout
@@ -45,3 +34,4 @@ const Home = () => {
 };
 
 export default Home;
+export { Head } from './utils/head'
