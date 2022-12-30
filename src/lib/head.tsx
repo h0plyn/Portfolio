@@ -8,7 +8,7 @@ const seo = {
   image: "https://dl.dropboxusercontent.com/s/qp7m0pjsrlf3w88/meta.png",
 };
 
-export const Head = () => {
+export function Head() {
   return (
     <>
       <title>{seo.title}</title>
@@ -22,4 +22,4 @@ export const Head = () => {
       <meta name="twitter:card" content="summary_large_image" />
     </>
   );
-};
+}
