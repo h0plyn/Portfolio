@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const seo = {
-  url: "https://rickyrhodes.dev",
-  title: "Ricky Rhodes | Software Engineer",
-  description: "TypeScript, GraphQL, NodeJS, Gatsby",
-  favicon: "",
-  image: "https://dl.dropboxusercontent.com/s/qp7m0pjsrlf3w88/meta.png",
+  url: 'https://rickyrhodes.dev',
+  title: 'Ricky Rhodes | Software Engineer',
+  description: 'TypeScript, GraphQL, NodeJS, Gatsby',
+  favicon: '',
+  image: 'https://dl.dropboxusercontent.com/s/qp7m0pjsrlf3w88/meta.png',
 };
 
 export function Head() {

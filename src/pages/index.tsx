@@ -1,8 +1,8 @@
-import React from "react";
-import { AnimateSharedLayout, motion } from "framer-motion";
-import GlobalStyles from "../GlobalStyles";
-import App from "../components";
-import "./styles.css";
+import React from 'react';
+import { AnimateSharedLayout, motion } from 'framer-motion';
+import GlobalStyles from '../GlobalStyles';
+import App from '../components';
+import './styles.css';
 
 const Home = () => {
   return (
@@ -24,4 +24,4 @@ const Home = () => {
 };
 
 export default Home;
-export { Head } from "../lib/head";
+export { Head } from '../lib/head';
