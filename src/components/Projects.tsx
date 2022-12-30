@@ -115,7 +115,7 @@ const QueryFlex = styled.div`
 export default function Projects() {
   const data = useStaticQuery(graphql`
     {
-      allDatoCmsProject(sort: { fields: projectid, order: ASC }) {
+      allDatoCmsProject(sort: { projectid: ASC }) {
         edges {
           node {
             image {
