@@ -12,6 +12,7 @@ interface ProjectNode {
     projectid: number;
     projecturl: string;
     aspect: string;
+    shoulddisplay: boolean;
   };
 }
 
@@ -134,6 +135,10 @@ export default function Projects() {
     }
   `);
 
+  const projects = data.allDatoCmsProject.edges.filter(
+    ({ node }: ProjectNode) => node.shoulddisplay
+  );
+
   return (
     <Container
       layout
@@ -148,7 +153,7 @@ export default function Projects() {
       }}
     >
       <AllProjects>
-        {data.allDatoCmsProject.edges.map(({ node }: ProjectNode) => {
+        {projects.map(({ node }: ProjectNode) => {
           const { image, title, description, projectid, projecturl, aspect } =
             node;
           return (
