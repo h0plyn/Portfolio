@@ -54,7 +54,7 @@ const SubText = styled.h1`
   }
 `;
 
-const DropdownButton = styled.div`
+const DropdownButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,6 +68,7 @@ const DropdownButton = styled.div`
   color: var(--light-green-secondary);
   padding: 0.5rem;
   border-radius: 6px;
+  border: none;
 
   &:hover {
     transform: translateY(-0.2rem);
