@@ -134,7 +134,7 @@ export default function History() {
       {allDatoCmsExperience.edges.map(({ node }: ExperienceNode) => {
         const { job, year, role } = node;
         return (
-          <HistoryContainer key={role}>
+          <HistoryContainer key={`${role}${year}`}>
             <ExpHeader>
               <Title>{job}</Title>
               <Year>{year}</Year>

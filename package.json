@@ -1,61 +1,64 @@
 {
-  "name": "Portfolio",
-  "version": "2.0.0",
-  "description": "Personal Portfolio of Ricky Rhodes",
-  "main": "index.tsx",
-  "scripts": {
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "clean": "gatsby clean && rm -rf node_modules",
-    "tsc": "tsc --noEmit"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/h0plyn/Portfolio.git"
-  },
-  "keywords": [
-    "gastby",
-    "datocms",
-    "styled-components",
-    "framer-motion",
-    "react"
-  ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/h0plyn/Portfolio/issues"
-  },
-  "homepage": "https://github.com/h0plyn/Portfolio#readme",
-  "dependencies": {
-    "@babel/core": "^7.12.3",
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "babel-plugin-styled-components": "^2.0.2",
-    "dotenv": "^10.0.0",
-    "framer-motion": "^8.0.2",
-    "gatsby": "^5.3.3",
-    "gatsby-plugin-image": "^3.3.2",
-    "gatsby-plugin-sharp": "^5.3.2",
-    "gatsby-plugin-styled-components": "^6.3.0",
-    "gatsby-plugin-typescript": "^5.3.1",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-datocms": "^5.0.3",
-    "gatsby-source-filesystem": "^5.3.1",
-    "gatsby-transformer-sharp": "^5.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^5.2.0",
-    "smoothscroll-polyfill": "^0.4.4",
-    "styled-components": "^5.3.6",
-    "webpack": "^5.65.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.10",
-    "@types/react-router-dom": "^5.1.7",
-    "@types/styled-components": "^5.1.21",
-    "typescript": "^4.9.4"
-  }
+	"name": "Portfolio",
+	"version": "2.0.0",
+	"description": "Personal Portfolio of Ricky Rhodes",
+	"main": "index.tsx",
+	"scripts": {
+		"develop": "gatsby develop",
+		"build": "gatsby build",
+		"clean": "gatsby clean && rm -rf node_modules",
+		"tsc": "tsc --noEmit"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/h0plyn/Portfolio.git"
+	},
+	"keywords": [
+		"gastby",
+		"datocms",
+		"styled-components",
+		"framer-motion",
+		"react"
+	],
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/h0plyn/Portfolio/issues"
+	},
+	"homepage": "https://github.com/h0plyn/Portfolio#readme",
+	"dependencies": {
+		"@babel/core": "^7.12.3",
+		"@fortawesome/fontawesome-svg-core": "^1.2.36",
+		"@fortawesome/free-brands-svg-icons": "^5.15.4",
+		"@fortawesome/free-solid-svg-icons": "^5.15.4",
+		"@fortawesome/react-fontawesome": "^0.1.14",
+		"babel-plugin-styled-components": "^2.0.2",
+		"dotenv": "^10.0.0",
+		"framer-motion": "^11.0.6",
+		"gatsby": "^5.3.3",
+		"gatsby-plugin-image": "^3.3.2",
+		"gatsby-plugin-sharp": "^5.3.2",
+		"gatsby-plugin-styled-components": "^6.3.0",
+		"gatsby-plugin-typescript": "^5.3.1",
+		"gatsby-plugin-web-font-loader": "^1.0.4",
+		"gatsby-source-datocms": "^5.0.3",
+		"gatsby-source-filesystem": "^5.3.1",
+		"gatsby-transformer-sharp": "^5.3.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^5.2.0",
+		"smoothscroll-polyfill": "^0.4.4",
+		"styled-components": "^5.3.6",
+		"webpack": "^5.65.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.26",
+		"@types/react-dom": "^18.0.10",
+		"@types/react-router-dom": "^5.1.7",
+		"@types/styled-components": "^5.1.21",
+		"typescript": "^4.9.4"
+	},
+	"volta": {
+		"yarn": "1.9.1"
+	}
 }
