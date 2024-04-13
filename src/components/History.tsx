@@ -1,6 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
+import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`
   display: flex;
@@ -105,15 +104,15 @@ const Year = styled.div`
 `;
 
 interface ExperienceNode {
-  node: {
-    job: string;
-    year: string;
-    role: string;
-  };
+	node: {
+		job: string;
+		year: string;
+		role: string;
+	};
 }
 
 export default function History() {
-  const { allDatoCmsExperience } = useStaticQuery(graphql`
+	const { allDatoCmsExperience } = useStaticQuery(graphql`
     query {
       allDatoCmsExperience(sort: { order: ASC }) {
         edges {
@@ -128,22 +127,22 @@ export default function History() {
     }
   `);
 
-  return (
-    <Container>
-      <Experience>Previous</Experience>
-      {allDatoCmsExperience.edges.map(({ node }: ExperienceNode) => {
-        const { job, year, role } = node;
-        return (
-          <HistoryContainer key={`${role}${year}`}>
-            <ExpHeader>
-              <Title>{job}</Title>
-              <Year>{year}</Year>
-              <Description>{role}</Description>
-            </ExpHeader>
-            <DescriptionMobile>{role}</DescriptionMobile>
-          </HistoryContainer>
-        );
-      })}
-    </Container>
-  );
+	return (
+		<Container>
+			<Experience>Previous</Experience>
+			{allDatoCmsExperience.edges.map(({ node }: ExperienceNode) => {
+				const { job, year, role } = node;
+				return (
+					<HistoryContainer key={`${role}${year}`}>
+						<ExpHeader>
+							<Title>{job}</Title>
+							<Year>{year}</Year>
+							<Description>{role}</Description>
+						</ExpHeader>
+						<DescriptionMobile>{role}</DescriptionMobile>
+					</HistoryContainer>
+				);
+			})}
+		</Container>
+	);
 }

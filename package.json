@@ -9,10 +9,6 @@
 		"clean": "gatsby clean && rm -rf node_modules",
 		"tsc": "tsc --noEmit"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/h0plyn/Portfolio.git"
-	},
 	"keywords": [
 		"gastby",
 		"datocms",
@@ -20,18 +16,12 @@
 		"framer-motion",
 		"react"
 	],
-	"author": "",
+	"author": "Ricky Rhodes <devrickyrhodes@gmail.com>",
 	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/h0plyn/Portfolio/issues"
-	},
-	"homepage": "https://github.com/h0plyn/Portfolio#readme",
 	"dependencies": {
 		"@babel/core": "^7.12.3",
-		"@fortawesome/fontawesome-svg-core": "^1.2.36",
-		"@fortawesome/free-brands-svg-icons": "^5.15.4",
-		"@fortawesome/free-solid-svg-icons": "^5.15.4",
-		"@fortawesome/react-fontawesome": "^0.1.14",
+		"@babel/preset-env": "^7.24.4",
+		"@babel/preset-react": "^7.24.1",
 		"babel-plugin-styled-components": "^2.0.2",
 		"dotenv": "^10.0.0",
 		"framer-motion": "^11.0.6",

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExtendedAbout } from './ExtendedAbout';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExtendedAbout } from "./ExtendedAbout";
 
 const Container = styled.div`
   display: flex;
@@ -11,6 +11,7 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: 5rem;
+  padding-top: 7rem;
 
   @media screen and (min-width: 960px) {
     padding-top: 15rem;
@@ -34,9 +35,9 @@ const MainText = styled.h1`
   margin-bottom: 1rem;
   padding-left: 1rem;
   @media screen and (min-width: 960px) {
+    margin-top: 2.7rem;
     font-size: 2.2rem;
     line-height: 3rem;
-    margin-top: 2.7rem;
   }
 `;
 
@@ -70,20 +71,20 @@ const DropdownButton = styled.button`
   border-radius: 6px;
   border: none;
 
-  &:hover {
-    transform: translateY(-0.2rem);
-    box-shadow: 3px 8px 34px -10px rgba(255, 255, 255, 0.2);
-    text-decoration: none;
-    background-color: var(--button);
-    transition: background-color 0.5s ease-in-out;
-  }
-
   @media screen and (min-width: 960px) {
     padding: 1rem;
     margin-top: 1.8rem;
     font-size: 1rem;
     width: 10rem;
     border-radius: 10px;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+      box-shadow: 3px 8px 34px -10px rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      background-color: var(--button);
+      transition: background-color 0.5s ease-in-out;
+    }
   }
 `;
 
@@ -92,39 +93,34 @@ const ButtonText = styled.p`
 `;
 
 export default function Header() {
-  const { datoCmsHeader } = useStaticQuery(graphql`
+	const { datoCmsHeader } = useStaticQuery(graphql`
     query {
       datoCmsHeader {
         hero
-        less
-        more
         subhead
-        read
       }
     }
   `);
 
-  const { hero, subhead, read, more, less } = datoCmsHeader;
-  const [readMore, setReadMore] = useState(false);
+	const { hero, subhead } = datoCmsHeader;
+	const [readMore, setReadMore] = useState(false);
 
-  return (
-    <Container>
-      <ContentBox>
-        <MainText>{hero}</MainText>
-        <SubText>{subhead}</SubText>
-        <AnimatePresence>{readMore && <ExtendedAbout />}</AnimatePresence>
-        <motion.div
-          layout
-          onClick={() => setReadMore(!readMore)}
-          transition={{ type: 'tween', duration: 0.2 }}
-        >
-          <DropdownButton>
-            <ButtonText className="read-more">
-              {read}&nbsp;{readMore ? less : more}
-            </ButtonText>
-          </DropdownButton>
-        </motion.div>
-      </ContentBox>
-    </Container>
-  );
+	return (
+		<Container>
+			<ContentBox>
+				<MainText>{hero}</MainText>
+				<SubText>{subhead}</SubText>
+				<AnimatePresence>{readMore && <ExtendedAbout />}</AnimatePresence>
+				<motion.div
+					layout
+					onClick={() => setReadMore((prev) => !prev)}
+					transition={{ type: "tween", duration: 0.2 }}
+				>
+					<DropdownButton>
+						<ButtonText>Read&nbsp;{readMore ? "less" : "more"}</ButtonText>
+					</DropdownButton>
+				</motion.div>
+			</ContentBox>
+		</Container>
+	);
 }

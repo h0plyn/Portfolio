@@ -1,12 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
+import { motion } from "framer-motion";
 
 interface ExtendedAboutNode {
-  node: {
-    copy: string;
-  };
+	node: {
+		copy: string;
+	};
 }
 
 const ExtendedText = styled.h1`
@@ -25,7 +24,7 @@ const ExtendedText = styled.h1`
 `;
 
 export const ExtendedAbout = () => {
-  const { allDatoCmsExtendedtext } = useStaticQuery(graphql`
+	const { allDatoCmsExtendedtext } = useStaticQuery(graphql`
     query {
       allDatoCmsExtendedtext(sort: { order: ASC }) {
         edges {
@@ -38,19 +37,19 @@ export const ExtendedAbout = () => {
     }
   `);
 
-  return (
-    <motion.div
-      layout
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -50, opacity: 0 }}
-      transition={{
-        default: { duration: 0.1, delay: 0.2 },
-      }}
-    >
-      {allDatoCmsExtendedtext.edges.map(({ node }: ExtendedAboutNode) => (
-        <ExtendedText key={node.copy}>{node.copy}</ExtendedText>
-      ))}
-    </motion.div>
-  );
+	return (
+		<motion.div
+			layout
+			initial={{ y: -50, opacity: 0 }}
+			animate={{ y: 0, opacity: 1 }}
+			exit={{ y: -50, opacity: 0 }}
+			transition={{
+				default: { duration: 0.1, delay: 0.2 },
+			}}
+		>
+			{allDatoCmsExtendedtext.edges.map(({ node }: ExtendedAboutNode) => (
+				<ExtendedText key={node.copy}>{node.copy}</ExtendedText>
+			))}
+		</motion.div>
+	);
 };

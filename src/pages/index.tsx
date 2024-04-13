@@ -1,19 +1,23 @@
-import React from "react";
 import { LayoutGroup } from "framer-motion";
 import GlobalStyles from "../GlobalStyles";
-import App from "../components";
-import "./styles.css";
+import Header from "../components/Header";
+import Projects from "../components/Projects";
+import History from "../components/History";
+import Footer from "../components/Footer";
 
-const Home = () => {
+const HomePage = () => {
 	return (
-		<div className="home">
+		<>
 			<GlobalStyles />
 			<LayoutGroup>
-				<App />
+				<Header />
+				<Projects />
 			</LayoutGroup>
-		</div>
+			<History />
+			<Footer />
+		</>
 	);
 };
 
-export default Home;
+export default HomePage;
 export { Head } from "../lib/head";

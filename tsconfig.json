@@ -1,14 +1,14 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "esnext",
-    "jsx": "react",
-    "lib": ["dom", "esnext"],
-    "strict": true,
-    "noEmit": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "noUnusedLocals": false
-  },
-  "exclude": ["node_modules", "public", ".cache"]
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "esnext",
+		"jsx": "react-jsx",
+		"lib": ["dom", "esnext"],
+		"strict": true,
+		"noEmit": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"noUnusedLocals": false
+	},
+	"exclude": ["node_modules", "public", ".cache"]
 }

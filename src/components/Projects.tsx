@@ -1,19 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage, type IGatsbyImageData } from "gatsby-plugin-image";
 
 interface ProjectNode {
-  node: {
-    image: { gatsbyImageData: IGatsbyImageData };
-    title: string;
-    description: string;
-    projectid: number;
-    projecturl: string;
-    aspect: string;
-    shoulddisplay: boolean;
-  };
+	node: {
+		image: { gatsbyImageData: IGatsbyImageData };
+		title: string;
+		description: string;
+		projectid: number;
+		projecturl: string;
+		aspect: string;
+		shoulddisplay: boolean;
+	};
 }
 
 const Container = styled(motion.div)`
@@ -37,7 +36,7 @@ const ProjectContainer = styled.div<{ projectid: number }>`
   margin-top: 1.5rem;
 
   @media screen and (min-width: 960px) {
-    flex-direction: ${(p) => (p.projectid % 2 === 0 ? 'row-reverse' : 'row')};
+    flex-direction: ${(p) => (p.projectid % 2 === 0 ? "row-reverse" : "row")};
     justify-content: center;
     width: 73%;
     margin-top: 5rem;
@@ -58,10 +57,10 @@ const Title = styled.h1`
 `;
 
 const Image = styled(GatsbyImage)<{
-  image: IGatsbyImageData;
-  aspect: string;
+	image: IGatsbyImageData;
+	aspect: string;
 }>`
-  height: ${(p) => (p.aspect === 'vertical' ? '70vw' : '50vw')};
+  height: ${(p) => (p.aspect === "vertical" ? "70vw" : "50vw")};
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
@@ -70,7 +69,7 @@ const Image = styled(GatsbyImage)<{
   @media screen and (min-width: 960px) {
     flex-direction: row;
     flex: 1;
-    height: ${(p) => (p.aspect === 'vertical' ? '28vw' : '20vw')};
+    height: ${(p) => (p.aspect === "vertical" ? "28vw" : "20vw")};
     margin: 0;
     padding: 0;
   }
@@ -114,7 +113,7 @@ const QueryFlex = styled.div`
 `;
 
 export default function Projects() {
-  const data = useStaticQuery(graphql`
+	const data = useStaticQuery(graphql`
     {
       allDatoCmsProject(sort: { projectid: ASC }) {
         edges {
@@ -135,45 +134,45 @@ export default function Projects() {
     }
   `);
 
-  const projects = data.allDatoCmsProject.edges.filter(
-    ({ node }: ProjectNode) => node.shoulddisplay
-  );
+	const projects = data.allDatoCmsProject.edges.filter(
+		({ node }: ProjectNode) => node.shoulddisplay,
+	);
 
-  return (
-    <Container
-      layout
-      initial={{ x: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        type: 'spring',
-        stiffness: 80,
-        bounce: 0.95,
-        duration: 0.2,
-        damping: 12,
-      }}
-    >
-      <AllProjects>
-        {projects.map(({ node }: ProjectNode) => {
-          const { image, title, description, projectid, projecturl, aspect } =
-            node;
-          return (
-            <ProjectContainer key={title} projectid={projectid}>
-              <a className="project-image" href={projecturl}>
-                <Image
-                  image={image.gatsbyImageData}
-                  alt={title}
-                  aspect={aspect}
-                  objectFit="contain"
-                />
-              </a>
-              <QueryFlex>
-                <Title>{title}</Title>
-                <Description>{description}</Description>
-              </QueryFlex>
-            </ProjectContainer>
-          );
-        })}
-      </AllProjects>
-    </Container>
-  );
+	return (
+		<Container
+			layout
+			initial={{ x: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{
+				type: "spring",
+				stiffness: 80,
+				bounce: 0.95,
+				duration: 0.2,
+				damping: 12,
+			}}
+		>
+			<AllProjects>
+				{projects.map(({ node }: ProjectNode) => {
+					const { image, title, description, projectid, projecturl, aspect } =
+						node;
+					return (
+						<ProjectContainer key={title} projectid={projectid}>
+							<a className="project-image" href={projecturl}>
+								<Image
+									image={image.gatsbyImageData}
+									alt={title}
+									aspect={aspect}
+									objectFit="contain"
+								/>
+							</a>
+							<QueryFlex>
+								<Title>{title}</Title>
+								<Description>{description}</Description>
+							</QueryFlex>
+						</ProjectContainer>
+					);
+				})}
+			</AllProjects>
+		</Container>
+	);
 }
