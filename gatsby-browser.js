@@ -1,5 +1,5 @@
-const smoothscroll = require('smoothscroll-polyfill');
+const smoothscroll = require("smoothscroll-polyfill");
 
 exports.onClientEntry = () => {
-  smoothscroll.polyfill();
-}
+	smoothscroll.polyfill();
+};

@@ -1,66 +1,55 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.nav`
   display: flex;
-  flex-direction: column;
   width: 100%;
+  height: 50px;
   background-color: var(--light-green);
-  padding-bottom: 3rem;
-  padding-left: 2rem;
+  justify-content: space-around;
+  align-items: center;
+
+  a {
+    color: var(--text);
+    transition: color 200ms ease;
+
+    :hover {
+      transform: unset;
+      color: var(--background-color);
+    }
+  }
+
   @media screen and (min-width: 960px) {
+    justify-content: left;
+    align-items: center;
+    gap: 2rem;
     padding-left: 14rem;
-  }
-`;
-
-const BackToTop = styled.div`
-  font-family: nimbus-sans-extended, sans-serif;
-  font-weight: 300;
-  font-size: 1.3rem;
-  margin-bottom: 0.7rem;
-  color: var(--background-color);
-  cursor: pointer;
-  @media screen and (min-width: 960px) {
-    font-size: 2.5rem;
-  }
-`;
-
-const Copyright = styled.h4`
-  font-family: input-mono;
-  font-weight: 300;
-  font-size: 0.7rem;
-  color: var(--background-color);
-  @media screen and (min-width: 960px) {
-    font-size: 1.1rem;
+    padding-bottom: 5rem;
+    font-size: 1.2rem;
   }
 `;
 
 export default function Footer() {
-  const { allDatoCmsFooter } = useStaticQuery(graphql`
-    query {
-      allDatoCmsFooter {
-        edges {
-          node {
-            back
-            copyright
-          }
-        }
-      }
-    }
-  `);
-  const {back, copyright} = allDatoCmsFooter.edges[0].node;
+	return (
+		<FooterContainer>
+			<a href="https://github.com/h0plyn">Github</a>
 
-  return (
-    <FooterContainer>
-      <BackToTop
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-      >
-        {back}
-      </BackToTop>
-      <Copyright>{copyright}</Copyright>
-    </FooterContainer>
-  );
+			<a
+				href="https://www.linkedin.com/in/rickyrhodes/"
+				target="_blank"
+				rel="noreferrer"
+			>
+				LinkedIn
+			</a>
+
+			<a
+				href="https://standardresume.co/r/azQnZ76rvx8XG6MLTzvny"
+				target="_blank"
+				rel="noreferrer"
+			>
+				Resume
+			</a>
+
+			<a href="mailto:devrickyrhodes@gmail.com?subject=Hey there!">Contact</a>
+		</FooterContainer>
+	);
 }
