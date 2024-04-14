@@ -28,14 +28,14 @@ body {
     overflow-x: hidden;
 }
 
-a {
+/* a {
     color: #e8e4e6;
     text-decoration: none;
 }
 
 a:hover {
     transform : scale(1.05);
-}
+} */
 
 a.project-image:hover {
     transform : scale(1.02);

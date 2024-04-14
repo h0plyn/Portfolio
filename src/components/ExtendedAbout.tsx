@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import { motion } from "framer-motion";

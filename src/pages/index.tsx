@@ -3,7 +3,7 @@ import GlobalStyles from "../GlobalStyles";
 import Header from "../components/Header";
 import Projects from "../components/Projects";
 import History from "../components/History";
-import Footer from "../components/Footer";
+import { Footer } from "../components/Footer";
 
 const HomePage = () => {
 	return (

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+    color: #e8e4e6;
+    text-decoration: none;
+}
+
+a:hover {
+    transform : scale(1.05);
+}
