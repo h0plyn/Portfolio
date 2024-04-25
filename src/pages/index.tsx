@@ -1,6 +1,5 @@
 "use client";
 import { LayoutGroup } from "framer-motion";
-import GlobalStyles from "../GlobalStyles";
 import { Header } from "../components/Header";
 import Projects from "../components/Projects";
 import History from "../components/History";
@@ -49,7 +48,6 @@ export interface PageQueryData {
 
 const HomePage = ({ data }: { data: PageQueryData }) => (
 	<>
-		<GlobalStyles />
 		<LayoutGroup>
 			<Header header={data.header} extendedAbout={data.extendedAbout} />
 			<Projects data={data.projects} />
