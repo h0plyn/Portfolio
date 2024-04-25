@@ -12,6 +12,10 @@ module.exports = {
 			"dark-green": "#001e1d",
 			orange: "#f9bc60",
 		},
+		fontFamily: {
+			sans: "nimbus-sans-extended,  sans-serif",
+			mono: "input-mono, monospace",
+		},
 		screens: {
 			lg: "960px",
 		},

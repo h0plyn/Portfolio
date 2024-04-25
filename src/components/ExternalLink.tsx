@@ -8,10 +8,13 @@ export const ExternalLink = ({
 	children: React.ReactNode;
 	target?: string;
 	rel?: string;
-}) => {
-	return (
-		<a href={href} className="hover:transform-none" target={target} rel={rel}>
-			{children}
-		</a>
-	);
-};
+}) => (
+	<a
+		href={href}
+		className="hover:transform-none hover:text-dark-green transition-colors"
+		target={target}
+		rel={rel}
+	>
+		{children}
+	</a>
+);

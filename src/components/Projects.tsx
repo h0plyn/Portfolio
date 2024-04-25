@@ -1,146 +1,15 @@
-"use client";
-import styled from "styled-components";
 import { motion } from "framer-motion";
-import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, type IGatsbyImageData } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
+import type { PageQueryData } from "../pages";
 
-interface ProjectNode {
-	node: {
-		image: { gatsbyImageData: IGatsbyImageData };
-		title: string;
-		description: string;
-		projectid: number;
-		projecturl: string;
-		aspect: string;
-		shoulddisplay: boolean;
-	};
-}
-
-const Container = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-bottom: 6.5rem;
-  @media screen and (min-width: 960px) {
-    padding-top: 7rem;
-    margin: auto;
-  }
-`;
-
-const ProjectContainer = styled.div<{ projectid: number }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 90%;
-  margin-top: 1.5rem;
-
-  @media screen and (min-width: 960px) {
-    flex-direction: ${(p) => (p.projectid % 2 === 0 ? "row-reverse" : "row")};
-    justify-content: center;
-    width: 73%;
-    margin-top: 5rem;
-    margin-bottom: 4rem;
-  }
-`;
-
-const Title = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
-  font-weight: 400;
-  color: var(--text);
-  font-size: 1.2rem;
-  margin-bottom: 1.1rem;
-  @media screen and (min-width: 960px) {
-    font-size: 2.5rem;
-    margin-bottom: 1.8rem;
-  }
-`;
-
-const Image = styled(GatsbyImage)<{
-	image: IGatsbyImageData;
-	aspect: string;
-}>`
-  height: ${(p) => (p.aspect === "vertical" ? "70vw" : "50vw")};
-  padding-left: 0;
-  padding-right: 0;
-  margin-top: 0;
-  margin-bottom: 1rem;
-
-  @media screen and (min-width: 960px) {
-    flex-direction: row;
-    flex: 1;
-    height: ${(p) => (p.aspect === "vertical" ? "28vw" : "20vw")};
-    margin: 0;
-    padding: 0;
-  }
-`;
-
-const AllProjects = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Description = styled.p`
-  font-family: input-mono, monospace;
-  font-weight: bold;
-  font-size: 0.7rem;
-  margin-bottom: 1.7rem;
-  padding-left: 1rem;
-  @media screen and (min-width: 960px) {
-    padding-left: 0;
-    font-size: 1.1rem;
-  }
-`;
-
-const QueryFlex = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 85%;
-
-  @media screen and (min-width: 960px) {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex: 1 1 1;
-    width: 100%;
-    height: 100%;
-    padding-left: 5rem;
-  }
-`;
-
-export default function Projects() {
-	const data = useStaticQuery(graphql`
-    {
-      allDatoCmsProject(sort: { projectid: ASC }) {
-        edges {
-          node {
-            image {
-              gatsbyImageData(layout: CONSTRAINED)
-              title
-            }
-            description
-            projectid
-            projecturl
-            title
-            aspect
-            shoulddisplay
-          }
-        }
-      }
-    }
-  `);
-
-	const projects = data.allDatoCmsProject.edges.filter(
-		({ node }: ProjectNode) => node.shoulddisplay,
-	);
+export default function Projects({
+	data,
+}: { data: PageQueryData["projects"] }) {
+	const projects = data.edges.filter(({ node }) => node.shoulddisplay);
 
 	return (
-		<Container
+		<motion.div
+			className="flex flex-col justify-center pb-24 m-auto lg:pt-28"
 			layout
 			initial={{ x: 0 }}
 			animate={{ opacity: 1 }}
@@ -152,28 +21,38 @@ export default function Projects() {
 				damping: 12,
 			}}
 		>
-			<AllProjects>
-				{projects.map(({ node }: ProjectNode) => {
-					const { image, title, description, projectid, projecturl, aspect } =
-						node;
+			<div className="flex flex-col items-center justify-center">
+				{projects.map(({ node }) => {
+					const { image, title, description, projecturl, aspect } = node;
 					return (
-						<ProjectContainer key={title} projectid={projectid}>
-							<a className="project-image" href={projecturl}>
-								<Image
+						<div
+							className="flex flex-col items-center h-full w-11/12 mt-6 lg:w-9/12 lg:mt-20 lg:mb-16 lg:odd:flex-row lg:even:flex-row-reverse"
+							key={title}
+						>
+							<a className="w-fit" href={projecturl}>
+								<GatsbyImage
+									className={`${
+										aspect === "vertical"
+											? "h-[70vw] lg:h-[28vw]"
+											: "h-[50vw] lg:h-[20vw]"
+									} px-0 mt-0 mb-4 lg:flex-row lg:flex-1 lg:m-0 lg:p-0`}
 									image={image.gatsbyImageData}
 									alt={title}
-									aspect={aspect}
 									objectFit="contain"
 								/>
 							</a>
-							<QueryFlex>
-								<Title>{title}</Title>
-								<Description>{description}</Description>
-							</QueryFlex>
-						</ProjectContainer>
+							<div className="flex flex-col justify-center items-center w-10/12 lg:justify-start lg:items-start lg:flex-auto lg:w-full lg:h-full lg:pl-20">
+								<h3 className="font-sans font-normal text-white text-lg mb-4 lg:text-4xl lg:mb-7">
+									{title}
+								</h3>
+								<p className="font-mono font-bold text-sm pl-4 mb-7 lg:text-base lg:pl-0">
+									{description}
+								</p>
+							</div>
+						</div>
 					);
 				})}
-			</AllProjects>
-		</Container>
+			</div>
+		</motion.div>
 	);
 }

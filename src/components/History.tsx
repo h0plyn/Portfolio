@@ -1,149 +1,35 @@
-"use client";
-import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
+import type { PageQueryData } from "../pages";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  background-color: var(--light-green);
-  padding: 2rem;
-  @media screen and (min-width: 960px) {
-    padding: 10rem 14rem;
-  }
-`;
-
-const Experience = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
-  font-weight: 300;
-  font-size: 1.7rem;
-  line-height: 2.48rem;
-  color: var(--light-green-secondary);
-  @media screen and (min-width: 960px) {
-    font-size: 2.5rem;
-    margin-bottom: 5rem;
-  }
-`;
-
-const HistoryContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  border-top: 1px solid var(--light-green-secondary);
-  padding-top: 1rem;
-  width: 100%;
-  @media screen and (min-width: 960px) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    margin-bottom: 0rem;
-    max-width: 1920px;
-    margin: auto;
-  }
-`;
-
-const ExpHeader = styled.div`
-  color: var(--background-color);
-  display: flex;
-  width: 100%;
-  margin-bottom: 0.5rem;
-
-  @media screen and (min-width: 960px) {
-    align-items: center;
-    justify-content: space-between;
-  }
-`;
-
-const Title = styled.h1`
-  font-family: nimbus-sans-extended, sans-serif;
-  color: var(--background-color);
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  @media screen and (min-width: 960px) {
-    font-size: 1.5rem;
-    flex: 1;
-  }
-`;
-
-const DescriptionMobile = styled.p`
-  color: var(--background-color);
-  font-size: 0.8rem;
-  font-weight: 200;
-
-  @media screen and (min-width: 960px) {
-    display: none;
-  }
-`;
-
-const Description = styled.p`
-  display: none;
-  @media screen and (min-width: 960px) {
-    display: flex;
-    color: var(--background-color);
-    font-size: 0.8rem;
-    font-weight: 200;
-    font-size: 1.2rem;
-    flex: 2;
-    margin-right: 3rem;
-    margin-top: 8px;
-  }
-`;
-
-const Year = styled.div`
-  font-size: 0.8rem;
-  margin-left: 1rem;
-  font-weight: 300;
-  margin-top: 5px;
-
-  @media screen and (min-width: 960px) {
-    margin-top: 8px;
-    font-size: 1.2rem;
-    flex: 1;
-  }
-`;
-
-interface ExperienceNode {
-	node: {
-		job: string;
-		year: string;
-		role: string;
-	};
-}
-
-export default function History() {
-	const { allDatoCmsExperience } = useStaticQuery(graphql`
-    query {
-      allDatoCmsExperience(sort: { order: ASC }) {
-        edges {
-          node {
-            order
-            role
-            job
-            year
-          }
-        }
-      }
-    }
-  `);
-
+export default function History({ data }: { data: PageQueryData["history"] }) {
 	return (
-		<Container>
-			<Experience>Previous</Experience>
-			{allDatoCmsExperience.edges.map(({ node }: ExperienceNode) => {
+		<section className="flex flex-col justify-center w-full bg-light-green p-8 lg:px-40 lg: lg:py-56">
+			<div className="font-sans font-light text-2xl leading-10 text-dark-green lg:text-4xl lg:mb-20">
+				Previous
+			</div>
+			{data.edges.map(({ node }) => {
 				const { job, year, role } = node;
 				return (
-					<HistoryContainer key={`${role}${year}`}>
-						<ExpHeader>
-							<Title>{job}</Title>
-							<Year>{year}</Year>
-							<Description>{role}</Description>
-						</ExpHeader>
-						<DescriptionMobile>{role}</DescriptionMobile>
-					</HistoryContainer>
+					<div
+						key={`${role}${year}`}
+						className="flex flex-col items-start mb-4 border-t-[1px] border-t-dark-green pt-4 w-full lg:py-20 lg:mb-0 lg:m-auto"
+					>
+						<div className="text-green flex w-full mb-2 lg:items-center lg:justify-center">
+							<div className="font-sans text-green text-base font-normal tracking-wide lg:text-2xl lg:flex-1">
+								{job}
+							</div>
+							<div className="text-sm ml-4 font-light mt-1 lg:mt-2 lg:text-xl lg:flex-1">
+								{year}
+							</div>
+							<p className="hidden text-green font-extralight text-xl mr-12 mt-2 flex-[2] lg:flex">
+								{role}
+							</p>
+						</div>
+						<p className="text-green text-sm font-extralight lg:hidden">
+							{role}
+						</p>
+					</div>
 				);
 			})}
-		</Container>
+		</section>
 	);
 }
