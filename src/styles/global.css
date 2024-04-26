@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(#003331, #004643);
+  color: #fffffe;
+  font-family: input-mono, monospace;
+  font-weight: bold;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+a {
+    color: #e8e4e6;
+    text-decoration: none;
+}
+
+a:hover {
+    transform : scale(1.05);
+}
+
+a.project-image:hover {
+  transform : scale(1.02);
+}
+
+

@@ -12,6 +12,6 @@ This portfolio website will hold completed projects, links to social media and o
 - DatoCMS
 - TypeScript
 - React
-- Styled-Components
+- Tailwind
 - Framer Motion
 - Netlify

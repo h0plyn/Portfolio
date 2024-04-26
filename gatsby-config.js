@@ -6,7 +6,7 @@ module.exports = {
 		"gatsby-transformer-sharp",
 		"gatsby-plugin-image",
 		"gatsby-plugin-typescript",
-		"gatsby-plugin-styled-components",
+		"gatsby-plugin-postcss",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {

@@ -1,13 +1,13 @@
-import GlobalStyles from "../GlobalStyles";
+import { Link } from "gatsby";
 
 const NotFound = () => (
 	<>
-		<GlobalStyles />
 		<title>404</title>
-		<div className="page">
-			<div className="page-content">
+		<div>
+			<div>
 				<h1>404</h1>
 				<p>Not found</p>
+				<Link to="/">Go Home</Link>
 			</div>
 		</div>
 	</>
