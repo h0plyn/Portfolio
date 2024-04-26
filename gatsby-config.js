@@ -1,9 +1,6 @@
 require("dotenv").config();
 
 module.exports = {
-	flags: {
-		PARTIAL_HYDRATION: true,
-	},
 	plugins: [
 		"gatsby-plugin-sharp",
 		"gatsby-transformer-sharp",

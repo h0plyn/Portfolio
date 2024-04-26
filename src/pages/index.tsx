@@ -1,4 +1,3 @@
-"use client";
 import { LayoutGroup } from "framer-motion";
 import { Header } from "../components/Header";
 import Projects from "../components/Projects";
