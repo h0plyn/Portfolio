@@ -9,7 +9,13 @@
 		"clean": "gatsby clean && rm -rf node_modules",
 		"tsc": "tsc --noEmit"
 	},
-	"keywords": ["gastby", "datocms", "tailwind", "framer-motion", "react"],
+	"keywords": [
+		"gastby",
+		"datocms",
+		"tailwind",
+		"framer-motion",
+		"react"
+	],
 	"author": "Ricky Rhodes <devrickyrhodes@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
@@ -17,25 +23,21 @@
 		"@babel/preset-env": "^7.24.4",
 		"@babel/preset-react": "^7.24.1",
 		"dotenv": "^10.0.0",
-		"framer-motion": "^11.0.6",
 		"gatsby": "^5.3.3",
 		"gatsby-plugin-image": "^3.3.2",
 		"gatsby-plugin-sharp": "^5.3.2",
 		"gatsby-plugin-typescript": "^5.3.1",
-		"gatsby-plugin-web-font-loader": "^1.0.4",
 		"gatsby-source-datocms": "^5.0.3",
 		"gatsby-source-filesystem": "^5.3.1",
 		"gatsby-transformer-sharp": "^5.3.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-router-dom": "^5.2.0",
 		"smoothscroll-polyfill": "^0.4.4",
 		"webpack": "^5.65.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.26",
 		"@types/react-dom": "^18.0.10",
-		"@types/react-router-dom": "^5.1.7",
 		"autoprefixer": "^10.4.19",
 		"gatsby-plugin-postcss": "^6.13.1",
 		"postcss": "^8.4.38",

@@ -9,6 +9,18 @@ const seo = {
 export function Head() {
 	return (
 		<>
+			<link
+				rel="preconnect"
+				href="https://use.typekit.net"
+				crossOrigin="anonymous"
+			/>
+			<link
+				rel="preconnect"
+				href="https://use.typekit.net/ekg2qbb.css"
+				crossOrigin="anonymous"
+			/>
+			<link rel="stylesheet" href="https://use.typekit.net/ekg2qbb.css" />
+			<meta name="theme-color" content="#003331" />
 			<title>{seo.title}</title>
 			<meta name="description" content={seo.description} />
 			<link rel="icon" type="image/png" sizes="32x32" href={seo.favicon} />
